@@ -1,0 +1,23 @@
+.warning-card {
+    background: linear-gradient(#e0e0db7d, #eeff002b);
+    color: rgb(105, 105, 105); 
+    right: 0; 
+    margin-left: auto; 
+    height: 80px;
+  }
+  
+  .warning-icon {
+    font-size: 28px; 
+     color: rgb(247, 142, 142);
+  }
+  
+  mat-card-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-card-content p {
+    font-size: 14px;
+  
+  }
+  

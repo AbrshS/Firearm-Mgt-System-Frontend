@@ -1,0 +1,171 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #ffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 1200px;
+  color: #0c2a4ac8;
+  height: 660px; 
+  font-size: 12px; 
+} 
+  h2 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #848484;
+  } 
+  input {
+    color: #0c2a4ac8;
+    border-radius: none;
+  }
+.option-input {
+  width: 200px; 
+  height: 30px;
+  background-color: #f1f1f1; 
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+} 
+
+.mat-toolbar {
+  display: flex;
+  align-items: center;
+  background-color: #0c2a4a;
+  color: #dcc380;
+  height: fit-content; 
+  padding: 10px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+button {
+  position: absolute;
+  right: 0;  
+  margin-right: 120px;
+
+} 
+button:hover{
+  background-color: #0c2a4a;
+  color: white;
+}
+/* signup-form.css */
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.form-column {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group {
+  margin-bottom: 0px; 
+  display: block;
+}
+
+/* Customize as needed */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+.form-control,
+textarea {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  outline: none;
+  border: none; 
+  background-color: #f1f1f1;
+} 
+img {
+  max-width: 30px;
+  max-height: 30px;
+}
+ mat-card {
+  background-color: #fafafa;
+  box-shadow:  6px 4px 6px rgb(172, 166, 166);
+ }/* Add some basic styling to the checkbox */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 30px; /* Space for the checkbox */
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Hide the actual checkbox input */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox design using a pseudo-element */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+
+.checkbox-container input:checked + .checkmark {
+  background-color: #2196F3;
+}
+
+
+.checkmark:after {
+  content: "\2713"; /* Unicode character for checkmark */
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Hide it by default */
+}
+
+/* Show the checkmark icon when the checkbox is checked */
+.checkbox-container input:checked + .checkmark:after {
+  display: block;
+}
+.CloseButton{
+  position: absolute;
+  right: 0; 
+  margin-right: 10px; 
+  cursor: pointer;
+}
+p{
+  margin-top: -10px; 
+  color: #848484;
+  font-size: 16px; 
+}

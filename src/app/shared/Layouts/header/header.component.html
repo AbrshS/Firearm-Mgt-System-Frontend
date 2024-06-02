@@ -1,0 +1,91 @@
+<mat-nav-list class="sticky-sidebar">
+  <ul>
+    <li class="sidebar-group">
+      <span class="sidebar-group-name">Home</span>
+      <ul>
+        <li>
+          <a
+            [routerLink]="['/dashboard']"
+            routerLinkActive="active"
+            class="sidebar-link"
+            >Dashboard</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li class="sidebar-group">
+      <span class="sidebar-group-name">Firearm Registry</span>
+      <ul>
+        <li>
+          <a
+            [routerLink]="['/FirearmRegistryManagement']"
+            routerLinkActive="active"
+            class="sidebar-link"
+            >Firearm Registration & Management</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li class="sidebar-group">
+      <span class="sidebar-group-name">Firearm Status</span>
+      <ul>
+        <li>
+          <a
+            [routerLink]="['/lostDestroyed']"
+            routerLinkActive="active"
+            class="sidebar-link"
+            >Lost and Destroyed</a
+          >
+        </li>
+        <ng-container *ngIf="accountType == 'Admin'">
+          <li>
+            <a
+              [routerLink]="['/Pending']"
+              routerLinkActive="active"
+              class="sidebar-link"
+              >Pending Operations</a
+            >
+          </li>
+        </ng-container>
+      </ul>
+    </li>  
+    
+    <li class="sidebar-group">
+      <span class="sidebar-group-name">Firearm Holder's</span>
+      <ul>
+        <li>
+          <a
+            [routerLink]="['/firearmHOlderCatagories']"
+            routerLinkActive="active"
+            class="sidebar-link"
+            >Firearm Holder Categories</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <ng-container *ngIf="accountType == 'Admin'">
+      <li class="sidebar-group">
+        <span class="sidebar-group-name">System User</span>
+        <ul>
+          <li>
+            <a
+              [routerLink]="['/SystemUserAccount']"
+              routerLinkActive="active"
+              class="sidebar-link"
+              >User Account Management</a
+            >
+          </li>
+          <!-- <li>
+            <a
+              [routerLink]="['/AccessControlList']"
+              routerLinkActive="active"
+              class="sidebar-link"
+              >Access Control list</a
+            >
+          </li> -->
+        </ul>
+      </li>
+    </ng-container>
+  </ul>
+</mat-nav-list>

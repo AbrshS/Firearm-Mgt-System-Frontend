@@ -1,0 +1,163 @@
+<app-banner></app-banner> 
+
+<mat-toolbar>
+  <img
+    class="toggle-btn"
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    src="assets/flogo.png"
+    alt="logo"
+    style="width: 60px; height: 60px; cursor: pointer"
+  /> 
+
+  <app-modal></app-modal>   
+
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation (App Header) -->
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <app-header></app-header>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <br /> 
+    <mat-tab-group class="tab-container">
+      <mat-tab label="Setting">
+        <div class="profile-settings-container">
+          <div class="form-header">
+            <i class="material-icons">account_circle</i>
+            <h3>Profile Settings</h3>
+          </div>
+          <div class="form-card">
+            <form [formGroup]="profileForm" (ngSubmit)="onUpdateProfile()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" formControlName="firstName" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input id="middleName" formControlName="middleName" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" formControlName="lastName" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="efpid">EFP ID</label>
+                    <input id="efpid" formControlName="efpid" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="job">Job</label>
+                    <input id="job" formControlName="job" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="unit">Unit</label>
+                    <input id="unit" formControlName="unit" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="extension">Extension</label>
+                    <input id="extension" formControlName="extension" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input id="mobile" formControlName="mobile" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" formControlName="email" class="form-control" type="email">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="accountType">Account Type</label>
+                    <input id="accountType" formControlName="accountType" class="form-control" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="loginIcon">Login Icon</label>
+                    <input id="loginIcon" formControlName="loginIcon" class="form-control" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" formControlName="username" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+            </form>
+          </div>
+        </div>
+        
+        
+        
+        
+      </mat-tab>
+      <mat-tab label="Withdraw">
+        <div class="container mt-5">
+          <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+              <use xlink:href="#exclamation-triangle-fill"/>
+            </svg>
+            <div>
+              Warning: Ensure your new password meets the required criteria.
+            </div>
+          </div>
+        
+          <h2>Change Password</h2>
+          <form [formGroup]="changePasswordForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="currentPassword">Current Password</label>
+              <input id="currentPassword" formControlName="currentPassword" type="password" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New Password</label>
+              <input id="newPassword" formControlName="newPassword" type="password" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm New Password</label>
+              <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control">
+              <div *ngIf="changePasswordForm.errors?.['mismatch']">
+                <small class="text-danger">Passwords do not match</small>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Change Password</button>
+          </form>
+        </div>
+        
+        
+        
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav-content>
+</mat-sidenav-container>   

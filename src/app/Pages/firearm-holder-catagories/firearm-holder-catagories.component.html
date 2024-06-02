@@ -1,0 +1,55 @@
+<app-banner></app-banner>
+<mat-toolbar>
+  <img 
+    class="toggle-btn"
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    src="assets/flogo.png"
+    alt="logo"
+    style="width: 60px; height: 60px; cursor: pointer;"
+  />
+
+  <app-modal></app-modal>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation (App Header) -->
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <app-header></app-header>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <br />
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label class="label">
+          <mat-icon>group</mat-icon> > Officer
+        </ng-template>
+        <app-officer></app-officer>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>perm_identity</mat-icon> > Civillian
+        </ng-template>
+        <app-civillian></app-civillian>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>account_balance</mat-icon> > Private & Govermental Org
+        </ng-template>
+        <app-poag></app-poag>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>language</mat-icon> > International Foreign
+        </ng-template>
+        <app-iofc></app-iofc>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>party_mode</mat-icon> > Holiday and Hunting
+        </ng-template>
+        <app-hmts></app-hmts>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,16 @@
+<div class="container" style="right: 0">
+  <mat-dialog-content class="content">
+    <div class="actions">
+      <button mat-dialog-close mat-button (click)="navigateTo('/settings')">
+        <mat-icon>settings</mat-icon>
+        Settings
+      </button>
+
+      <hr />
+
+      <button mat-button matTooltip="sign out" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>Sign Out
+      </button>
+    </div>
+  </mat-dialog-content>
+</div>

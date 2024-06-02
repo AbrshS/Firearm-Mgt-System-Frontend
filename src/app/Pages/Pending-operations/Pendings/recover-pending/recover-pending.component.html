@@ -1,0 +1,116 @@
+<mat-table [dataSource]="dataSource">
+    <!-- Define your table columns here -->
+    <ng-container style="height: 1px" matColumnDef="REF#">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        style="background-color: #f1f1f1"
+      >
+        REF#
+      </th>
+
+      <td *matCellDef="let element">
+        {{ element["REF#"] }} <span>#REF</span> {{ element.id }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="NAME">
+      <div>
+        <th
+          style="background-color: #f1f1f1"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          NAME
+        </th>
+      </div>
+      <td mat-cell *matCellDef="let element">
+        {{ element.NAME }}
+        <span style="font-weight: bold"> {{ element.fullName }}</span>
+        <br />
+        {{ element.fpId }} <br />
+        {{ element.title }} <br />
+        {{ element.phoneNumber }} <br />
+        {{ element.position }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FIREARM">
+      <th
+        style="background-color: #f1f1f1"
+        mat-header-cell
+        *matHeaderCellDef
+      >
+        FIREARM
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.FIREARM }} {{ element.firearmType }}
+        {{ element.firearmModel }} <br />
+        <span> </span> {{ element.firearmCalibre }} <br />
+        <span> </span> {{ element.firearmMechanism }} <br />
+        <span> </span> {{ element.manufacturerSerial }} <br />
+        <span> </span> {{ element.magazineCapacity }} <br />
+        <span> </span> {{ element.yearManufacture }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="WHO REGISTERD THE FIREARM">
+      <th
+        style="background-color: #f1f1f1"
+        mat-header-cell
+        *matHeaderCellDef
+      >
+        WHO REGISTERED THE FIREARM
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element["WHO REGISTERD THE FIREARM"] }}
+        {{ element.registeredFullName }} <br />
+        {{ element.registeredTitle }} <br />{{
+          element.registeredPosition
+        }}
+        <br />
+        {{ element.registeredEmail }} <br />
+        {{ element.registeredSignature }} <br />
+        {{ element.registeredDate }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="REGISTERED BODY">
+      <th
+        style="background-color: #f1f1f1"
+        mat-header-cell
+        *matHeaderCellDef
+      >
+        REGISTERED BODY
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element["REGISTERED BODY"] }}
+        {{ element.registeredBodyFullName }} <br />
+        {{ element.registeredBodyResponsibility }} <br />
+        {{ element.registeredBodySignature }} <br />
+        {{ element.registeredBodyDate }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ACTION">
+      <th
+        style="background-color: #f1f1f1"
+        mat-header-cell
+        *matHeaderCellDef
+      >
+        ACTION
+      </th>
+      <td *matCellDef="let element">
+        {{ element.ACTION }} <button mat-button style="color: rgb(118, 231, 118);"> <mat-icon>check_circle</mat-icon>Confirm</button>
+        <br />
+        <button mat-button style="color: rgb(255, 98, 98);"> <mat-icon>close</mat-icon> Cancel</button>
+      </td>
+    </ng-container>
+    <!-- Define more columns similarly -->
+    <tr
+      mat-header-row
+      *matHeaderRowDef="displayedColumns"
+      style="height: auto"
+    ></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </mat-table>

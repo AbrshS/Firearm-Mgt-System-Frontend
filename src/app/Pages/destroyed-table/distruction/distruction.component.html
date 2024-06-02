@@ -1,0 +1,239 @@
+<div class="modal">
+  <div class="modal-content" *ngIf="isdistructionModal">
+    <div class="destruction-box">
+      <form [formGroup]="destructionForm">
+        <div> 
+          <div class="CloseButton">
+            <mat-icon (click)="closeModal()">close</mat-icon>
+          </div>
+          <h2 style="color: #0c2a4c">Firearm Distruction Authorization</h2>
+          <p>
+            To complete the transfer of firearms listed alongside,Kindly fill
+            all the information in this form.When satisfied,that all the details
+            are correct ,click on the
+            <strong>"CONFIRM DISTRUCTION" </strong>button below
+          </p>
+          <hr />
+        </div>
+        <mat-card
+          style="
+            height: 90px;
+            background: linear-gradient(to top, #ed9a9a, #f9f9f9);
+          "
+        >
+          <img
+            style="width: 70px; margin-top: 10px"
+            src="assets/warning.png"
+            class="img-warn"
+            alt="warn"
+          />
+          <p style="margin-left: 70px; margin-top: -60px">
+            Please Note:Once you click on the "CONFIRM DISTRUCTION" button
+            below,the firearms listed will be marked as destroyed.This procedure
+            is<strong style="color: red">&nbsp;NOT REVERSABLE</strong>
+          </p>
+        </mat-card>
+        <br />
+
+        <div class="user-bo">
+          <p>Selected Firearm To Be Destroyed</p>
+          <input
+            type="text"
+            name="manufacturerSerial"
+            id="manufacturerSerial"
+            formControlName="manufacturerSerial"
+            [(ngModel)]="distructionData.manufacturerSerial"
+            readonly
+          />
+          <input
+            type="text"
+            name="isFirearm"
+            id="isFirearm"
+            formControlName="isFirearm"
+            [(ngModel)]="distructionData.isFirearm"
+            readonly
+          />
+          <input
+            type="text"
+            name="dateMarked"
+            id="dateMarked"
+            formControlName="dateMarked"
+            [(ngModel)]="distructionData.dateMarked"
+            readonly
+          />
+          <input
+            type="text"
+            name="markedBy"
+            id="markedBy"
+            formControlName="markedBy"
+            [(ngModel)]="distructionData.markedBy"
+            readonly
+          />
+          <input
+            type="text"
+            name="firearmType"
+            id="firearmType"
+            formControlName="firearmType"
+            [(ngModel)]="distructionData.firearmType"
+            readonly
+          />
+          <input
+            type="text"
+            name="firearmModel"
+            id="firearmModel"
+            formControlName="firearmModel"
+            [(ngModel)]="distructionData.firearmModel"
+            readonly
+          />
+          <input
+            type="text"
+            name="firearmMechanism"
+            id="firearmMechanism"
+            formControlName="firearmMechanism"
+            [(ngModel)]="distructionData.firearmMechanism"
+            readonly
+          />
+          <input
+            type="text"
+            name="firearmCalibre"
+            id="firearmCalibre"
+            formControlName="firearmCalibre"
+            [(ngModel)]="distructionData.firearmCalibre"
+            readonly
+          />
+          <input
+            type="text"
+            name="magazineCapacity"
+            id="magazineCapacity"
+            formControlName="magazineCapacity"
+            [(ngModel)]="distructionData.magazineCapacity"
+            readonly
+          />
+          <input
+            type="text"
+            name="yearManufacture"
+            id="yearManufacture"
+            formControlName="yearManufacture"
+            [(ngModel)]="distructionData.yearManufacture"
+            readonly
+          />
+          <input
+            type="text"
+            name="source"
+            id="source"
+            formControlName="source"
+            [(ngModel)]="distructionData.source"
+            readonly
+          />
+          <input
+            type="text"
+            name="store"
+            id="store"
+            formControlName="store"
+            [(ngModel)]="distructionData.store"
+            readonly
+          />
+          <input
+            type="text"
+            name="additionalComment"
+            id="additionalComment"
+            formControlName="additionalComment"
+            [(ngModel)]="distructionData.additionalComment"
+            readonly
+          />
+        </div>
+        <br />
+
+        <div class="user-box">
+          <br />
+          <input
+            id="destructionDate"
+            type="date"
+            name=""
+            required=""
+            value=""
+            formControlName="destructionDate"
+          />
+          <br />
+          <label for="destructionDate">Distruction Date: </label>
+        </div>
+
+        <div class="user-box">
+          <br />
+          <input
+            id="destructionRequestedBy"
+            type="text"
+            name=""
+            required=""
+            formControlName="destructionRequestedBy"
+          />
+          <br />
+          <label for="destructionRequestedBy">Destruction Requested By: </label>
+        </div>
+
+        <div class="user-box">
+          <br />
+          <input
+            id="reasonForDestruction"
+            type="text"
+            name=""
+            required=""
+            formControlName="reasonForDestruction"
+          />
+          <br />
+          <label for="reasonForDestruction">Reason For Destruction: </label>
+        </div>
+
+        <div class="user-box">
+          <br />
+          <input
+            id="authorizedBy"
+            type="text"
+            name=""
+            required=""
+            formControlName="authorizedBy"
+          />
+          <br />
+          <label for="authorizedBy">Authorized By: </label>
+        </div>
+
+        <label> </label>
+        <br />
+        <br />
+
+        <button
+          mat-raised-button
+          (click)="OnSubmit()"
+          style="
+            text-transform: uppercase;
+            color: rgb(70, 69, 69);
+            font-size: 12px;
+            position: absolute;
+            right: 0;
+            margin-right: 10px;
+          "
+          type="submit"
+        >
+          Confirm Distruction
+        </button>
+
+        <br />
+        <br />
+        <br />
+        <mat-card
+          style="
+            height: 50px;
+            background: linear-gradient(to top, #e6c774, #f9f9f9);
+          "
+        >
+          <label>
+            <p>
+              Please make sure that all the fields above are completed before
+              clicking on the <strong>"CONFIRM DiSTRUCTION "</strong> button
+            </p>
+          </label>
+        </mat-card>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.btn button{
+    position:absolute;
+    float: right;
+    right: 0;
+    margin-right: 20px;
+    margin-bottom: 60px;
+    background-color: silver;
+
+}  
+.btn button:hover{
+    background-color: #0c2a4c;
+    color: white;
+}
+.table{
+    width: 95%;
+    margin-left: 30px;
+}
+thead {
+    background-color: #f1f1f1;
+    color: rgb(54, 54, 54);
+}

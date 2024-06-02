@@ -1,0 +1,70 @@
+
+  button[ngxPrint] {
+    width: 40px;
+    height: 30px;
+    opacity: 0.5;
+    position: absolute;
+    top: 2%;
+    right: 20px; 
+    transform: translateY(-50%);
+    
+  }
+  
+  .print-button {
+    margin-left: 95%;
+    opacity: 0.5;  }
+  @media print{
+    button{
+      display: none;
+    }
+  }
+  
+  .input-one{
+    position: relative;
+  }
+  .bottom-line-input-one {
+    border: none;
+    border-bottom: 1px solid black; 
+    padding: 5px;
+    width: 80%;
+    outline: none; 
+    background-color: transparent; 
+  }
+  
+  .input-two{
+    position: relative;
+  }
+  .bottom-line-input-two {
+    border: none;
+    border-bottom: 1px solid black; 
+    padding: 5px;
+    width: 11%;
+    outline: none; 
+    background-color: transparent; 
+  }
+  
+  .input-three{
+    position: relative;
+  }
+  .bottom-line-input-three {
+    border: none;
+    border-bottom: 1px solid black; 
+    padding: 5px;
+    width: 75%;
+    outline: none; 
+    background-color: transparent; 
+  }
+  .input-four{
+    position: relative;
+  }
+  .bottom-line-input-four {
+    border: none;
+    border-bottom: 1px solid black; 
+    padding: 5px;
+    width: 78%;
+    outline: none; 
+    background-color: transparent; 
+  }
+  
+  
+  

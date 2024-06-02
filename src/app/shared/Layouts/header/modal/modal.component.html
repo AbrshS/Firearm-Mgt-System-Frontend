@@ -1,0 +1,25 @@
+<mat-toolbar>
+  <div class="container">
+    <div class="title">
+      <p>Ethiopian Federal Police</p>
+      <p>Small Arms / Light Weapons Tracing System V.0.0</p>
+    </div>
+  </div>
+  <div class="toolbar-right">
+    <!-- Vertical line separator -->
+    <p class="date">{{ currentDateTime | date : "mediumDate" }}</p>
+    <div class="separator"></div>
+    <p
+      class="profile-image"
+      (click)="openProfileDialog()"
+      matTooltip="User Profile"
+    >
+      {{ fullName }}
+    </p> 
+    <div class="separator"></div> 
+
+  <mat-icon *ngIf="accountType == 'Admin'"  matBadgeColor="warn" (click) ="openNotification()">notifications</mat-icon>  
+
+    <!-- <img  src="assets/man.jpg" alt="Profile" class="profile-image" (click)="openProfileDialog()" matTooltip="User Profile"> -->
+  </div>
+</mat-toolbar>

@@ -1,0 +1,612 @@
+<div *ngIf="isModalVisible">
+  <mat-toolbar
+    >Firearm Registry / New Firearm
+    <button mat-button (click)="closeModal()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <form [formGroup]="myForm" (ngSubmit)="OnSubmit()">
+    <div class="three-column-container">
+      <div class="column">
+        <h2>Firearm Serials & Marking information</h2>
+        <div class="input-container">
+          <label for="inputField" class="input-label"
+            >Manufacturer Serial</label
+          >
+          <input
+            type="text"
+            id="inputField"
+            class="input-field"
+            placeholder="Enter Manufacture Serial"
+            formControlName="manufacturerSerial"
+          />
+        </div>
+        <br />
+
+        <div class="checkbox-container">
+          <label class="checkbox-label">Is Firearm Marked?</label>
+          <div class="checkbox-options">
+            <label>
+              <input
+                type="checkbox"
+                name="isFirearm"
+                value="true"
+                formControlName="isFirearm"
+              />
+              Yes
+            </label>
+            <br />
+            <label>
+              <input
+                type="checkbox"
+                name="isFirearm"
+                value="false"
+                formControlName="isFirearm"
+              />
+              No
+            </label>
+          </div>
+        </div>
+        <br />
+
+        <div class="input-container">
+          <label for="inputField" class="input-label">Datemarked</label>
+          <input
+            type="date"
+            id="inputField"
+            class="input-field"
+            placeholder="Enter Datemarked"
+            formControlName="dateMarked"
+          />
+        </div>
+        <br />
+
+        <div class="input-container">
+          <label for="inputField" class="input-label">Marked By</label>
+          <input
+            type="text"
+            id="inputField"
+            class="input-field"
+            placeholder="Enter the Marker"
+            formControlName="markedBy"
+          />
+        </div>
+        <br />
+
+        <div class="input-container" style="visibility: hidden">
+          <label for="status" class="input-label">status</label>
+          <input
+            type="text"
+            id="status"
+            class="input-field"
+            placeholder="Enter the Marker"
+            formControlName="status"
+          />
+        </div>
+        <br />
+      </div>
+
+      <div class="column">
+        <h2>Firearm Type,Manufacturer & Calibre</h2>
+
+        <label for="firearmType">Firearm Type:</label> <br />
+        <select
+          id="firearmType"
+          name="firearmType"
+          formControlName="firearmType"
+          class="option-input"
+          value="hello"
+        >
+          <option value="" style="text-align: center">
+            --Select Firearm Type--
+          </option>
+          <option value="">Select type</option>
+          <option value="(unknown)">(unknown)</option>
+          <option value="Assault Rifle">Assault Rifle</option>
+          <option value="Carbine">Carbine</option>
+          <option value="Derringer">Derringer</option>
+          <option value="Lever-Action Handgun">Lever-Action Handgun</option>
+          <option value="Macarov">Macarov</option>
+          <option value="Machine Gun">Machine Gun</option>
+          <option value="Motar">Motar</option>
+          <option value="Muzzle Loader">Muzzle Loader</option>
+          <option value="Pistol">Pistol</option>
+          <option value="Revolver">Revolver</option>
+          <option value="Rifle">Rifle</option>
+          <option value="Rocket Launcher">Rocket Launcher</option>
+          <option value="Shot Gun">Shot Gun</option>
+          <option value="Sniper Rifle">Sniper Rifle</option>
+          <!-- Add more options as needed -->
+        </select>
+        <br />
+        <br />
+
+        <label for="firearmModel">Firearm Model:</label> <br />
+        <select
+          id="firearmModel"
+          name="firearmModel"
+          formControlName="firearmModel"
+          class="option-input"
+          value="hello"
+        >
+          <option value="" style="text-align: center">
+            --Select Firearm Model--
+          </option>
+          <option value="(unknown)">(unknown)</option>
+          <option value="AL Kadesih rifle (Iraq)">
+            AL Kadesih rifle (Iraq)
+          </option>
+          <option value="AMD">AMD</option>
+          <option value="American">American</option>
+          <option value="AKM">AKM</option>
+          <option value="AKS 74U">AKS 74U</option>
+          <option value="AK 47">AK 47</option>
+          <option value="AK 47 / AKM (Kalashnikov & Variants)">
+            AK 47 / AKM (Kalashnikov & Variants)
+          </option>
+          <option value="AK 47/ AKS-47">AK 47/ AKS-47</option>
+          <option value="AK 74 (Kalashnikov & Variants)">
+            AK 74 (Kalashnikov & Variants)
+          </option>
+          <option value="AKS 74">AKS 74</option>
+          <option value="AUSTEN (AUS)">AUSTEN (AUS)</option>
+          <option value="AR 15 (M 16/M 4) & Variants">
+            AR 15 (M 16/M 4) & Variants
+          </option>
+          <option value="Barrett">Barrett</option>
+          <option value="Beretta M12">Beretta M12</option>
+          <option value="Bren">Bren</option>
+          <option value="Browning M 2">Browning M 2</option>
+          <option value="Browning M2HB air-cooled machine gun on M3 tripod">
+            Browning M2HB air-cooled machine gun on M3 tripod
+          </option>
+          <option value="Bulldog">Bulldog</option>
+          <option value="Carl Gustav recoilless rifle">
+            Carl Gustav recoilless rifle
+          </option>
+          <option value="CETME modelo B">CETME modelo B</option>
+          <option value="CETME modelo C">CETME modelo C</option>
+          <option value="Clerke">Clerke</option>
+          <option value="Colt M 1911">Colt M 1911</option>
+          <option value="Chinese Type 69 RPG">Chinese Type 69 RPG</option>
+          <option value="CHN Model 56 (AK 47)">CHN Model 56 (AK 47)</option>
+          <option value="CHN Norinco Type 54 Model 213-9*19mm">
+            CHN Norinco Type 54 Model 213-9*19mm
+          </option>
+          <option
+            value="CHN, Norinco Uzi, sporter model single action semi-automatic"
+          >
+            CHN, Norinco Uzi, sporter model single action semi-automatic
+          </option>
+          <option value="CHN SKS (Type 56)">CHN SKS (Type 56)</option>
+          <option value="Defender">Defender</option>
+          <option value="DRAGUNOV SVD (Variants)">
+            DRAGUNOV SVD (Variants)
+          </option>
+          <option value="DShk (Degtyaryova-Shpagina Krupnokaliberny)">
+            DShk (Degtyaryova-Shpagina Krupnokaliberny)
+          </option>
+          <option value="EIG">EIG</option>
+          <option value="FAMAS">FAMAS</option>
+          <option value="Fatih 13">Fatih 13</option>
+          <option value="FIM-92 Stinger">FIM-92 Stinger</option>
+          <option value="Forehand">Forehand</option>
+          <option value="FN High Power">FN High Power</option>
+          <option value="FN FAL (Variants)">FN FAL (Variants)</option>
+          <option value="FN P90">FN P90</option>
+          <option value="Frontier">Frontier</option>
+          <option value="FPK rifle (ROU)">FPK rifle (ROU)</option>
+          <option value="G 17-G39">G 17-G39</option>
+          <option value="G3">G3</option>
+          <option value="G3 A1">G3 A1</option>
+          <option value="G3 A3">G3 A3</option>
+          <option value="G3 A32ZF">G3 A32ZF</option>
+          <option value="G3 A4">G3 A4</option>
+          <option value="Galil AR (ISR)">Galil AR (ISR)</option>
+          <option value="Garand">Garand</option>
+          <option value="Glock 17">Glock 17</option>
+          <option value="Generation 1 Glock 17">Generation 1 Glock 17</option>
+          <option value="Generation 2 Glock 17">Generation 2 Glock 17</option>
+          <option value="Generation 3 Glock 17">Generation 3 Glock 17</option>
+          <option value="Glock 17C">Glock 17C</option>
+          <option value="Generation 2 Glock 17 with Generation 3 grip">
+            Generation 2 Glock 17 with Generation 3 grip
+          </option>
+          <option value="Glock 17L">Glock 17L</option>
+          <option value="Hawes">Hawes</option>
+          <option value="HK 21 / HK 23">HK 21 / HK 23</option>
+          <option value="HK 21 machine gun">HK 21 machine gun</option>
+          <option value="HK 21E machine gun">HK 21E machine gun</option>
+          <option value="H&K G3(Variants)">H&K G3(Variants)</option>
+          <option value="HUN AMD 65">HUN AMD 65</option>
+          <option value="Igla (SA-16 / SA-18)">(SA-16 / SA-18)</option>
+          <option value="IMI Galil ARM">IMI Galil ARM</option>
+          <option value="Kalashnikov AK-47">Kalashnikov AK-47</option>
+          <option value="Kalashnikov Variants">Kalashnikov variants</option>
+          <option value="Lee-Enfield, SMLE">Lee-Enfield, SMLE</option>
+          <option value="M 60">M 60</option>
+          <option value="M60E3 light machine gun">
+            M60E3 light machine gun
+          </option>
+          <option value="M60 machine gun on internal bipod">
+            M60 machine gun on internal bipod
+          </option>
+          <option value="M60E4 / Mk.43 mod.1 machine gun">
+            M60E4 / Mk.43 mod.1 machine gun
+          </option>
+          <option value="M 79 grenade launcher">M 79 grenade launcher</option>
+          <option value="M 203 grenade launcher">M 203 grenade launcher</option>
+          <option value="MAS 49">MAS 49</option>
+          <option value="MAS 49/ MAS 49/56">MAS 49/ MAS 49/56</option>
+          <option value="MAS 49/56">MAS 49/56</option>
+          <option value="Makarov PM (Pistolet Makarova)">
+            Makarov PM (Pistolet Makarova)
+          </option>
+          <option value="Mauser K98">Mauser K98</option>
+          <option value="Micro UZI">Micro UZI</option>
+          <option value="Mini UZI">Mini UZI</option>
+          <option value="M 16A2">M 16A2</option>
+          <option value="M 4">M 4</option>
+          <option value="M 4 A 1">M 4 A 1</option>
+          <option value="MAT 49">MAT 49</option>
+          <option value="Mk. 1">Mk. 1</option>
+          <option value="Mk. 2">Mk. 2</option>
+          <option value="Mk. 2S">Mk. 2S</option>
+          <option value="Mk. 3">Mk. 3</option>
+          <option value="Mk. 4">Mk. 4</option>
+          <option value="Mk. 5">Mk. 5</option>
+          <option value="MG 42 / MG 3 & Variants">
+            MG 42 / MG 3 & Variants
+          </option>
+          <option value="Mosin-Nagant Rifle Mod.1891 (91/30;91/38;91/44)">
+            Mosin-Nagant Rifle Mod.1891 (91/30;91/38;91/44)
+          </option>
+          <option value="POL">POL</option>
+          <option value="PK(Pulemyot Kalashnikova)">
+            PK(Pulemyot Kalashnikova)
+          </option>
+          <option value="PPSh 41 (Pistolet-Pulemyot Shpagina)">
+            PPSh 41 (Pistolet-Pulemyot Shpagina)
+          </option>
+          <option value="ROU">ROU</option>
+          <option value="ROU PA md.86">ROU PA md.86</option>
+          <option value="RPD (Ruchnoy Pulemyot Degtyareva)">
+            RPD (Ruchnoy Pulemyot Degtyareva)
+          </option>
+          <option value="RPK (Ruchnoy Pulemyot Kalashnikova)">
+            RPK (Ruchnoy Pulemyot Kalashnikova)
+          </option>
+          <option value="RPG 2">RPG 2</option>
+          <option value="RPG 7">RPG 7</option>
+          <option value="SA VZ 58 (Czechoslovakia)">
+            SA VZ 58 (Czechoslovakia)
+          </option>
+          <option value="SA VZ 23/25-SA vz24/26">SA VZ 23/25-SA VZ24/26</option>
+          <option value="Simonov SKS">Simonov SKS</option>
+          <option value="SKS with a scope">SKS with a scope</option>
+          <option value="Sten gun">Sten gun</option>
+          <option value="Sterling L2A3">Sterling L2A3</option>
+          <option value="Strela (SA-7 / SA-14)">Strela (SA-7 / SA-14)</option>
+          <option value="Steyr AUG">Steyr AUG</option>
+          <option value="Steyr AUG HBAR, 5.56*45mm">
+            Steyr AUG HBAR, 5.56*45mm
+          </option>
+          <option value="Steyr AUG A3 SF 5.56*45mm">
+            Steyr AUG A3 SF 5.56*45mm
+          </option>
+          <option value="Steyr AUG Para 9*19mm">Steyr AUG Para 9*19mm</option>
+          <option value="South African G3">South African G3</option>
+          <option value="Tokarev TT-30/TT-33">Tokarev TT-30/TT-33</option>
+          <option value="TT-30">TT-30</option>
+          <option value="TT-30, post-WW II manufacture">
+            TT-30, post-WW II manufacture
+          </option>
+          <option value="Type 56 (China)">Type 56 (China)</option>
+          <option value="Type 56-1 (China)">Type 56-1 (China)</option>
+          <option value="Type 56-2 (China)">Type 56-2 (China)</option>
+          <option value="Type 85 rifle (China)">Type 85 rifle (China)</option>
+          <option value="Tokarev TT-30/TT-33">Tokarev TT-30/TT-33</option>
+          <option value="Tokgypt 58 made in HUN for EGY, chambered in 9*19mm">
+            Tokgypt 58 made in HUN for EGY, chambered in 9*19mm
+          </option>
+          <option value="UZI">UZI</option>
+          <option value="Valmet Rk.76 / Rk.62 (Finland)">
+            Valmet Rk.76 / Rk.62 (Finland)
+          </option>
+          <option value="Vektor R4 (South Africa)">
+            Vektor R4 (South Africa)
+          </option>
+          <option value="Webley Mk.IV">Webley Mk.IV</option>
+          <option value="Yugoslavian SKS (Type 59/66)">
+            Yugoslavian SKS (Type 59/66)
+          </option>
+          <option value="Yugoslavian Zastava M72">
+            Yugoslavian Zastava M72
+          </option>
+          <!-- Add more options as needed -->
+        </select>
+        <br />
+        <br />
+        <label for="firearmMechanism">Firearm Mechanism:</label> <br />
+        <select
+          id="firearmMechanism"
+          name="firearmMechanism"
+          formControlName="firearmMechanism"
+          class="option-input"
+          value="hello"
+        >
+          <option value="" style="text-align: center">
+            --Select Firearm Mechanism--
+          </option>
+          <option value="(Unknown)">(Unknown)</option>
+          <option value="Bolt Action">Bolt Action</option>
+          <option value="Break Open">Break Open</option>
+          <option value="Double / Single Action">Double / Single Action</option>
+          <option value="Double Action">Double Action</option>
+          <option value="Lever Action">Lever Action</option>
+          <option value="Over & Under">Over & Under</option>
+          <option value="Pump Action">Pump Action</option>
+          <option value="Semi-Automatic">Semi-Automatic</option>
+          <option value="Side By Side">Side By Side</option>
+          <option value="Single Action">Single Action</option>
+          <option value="Single Shot">Single Shot</option>
+          <option value="Strike Fire">Strike Fire</option>
+          <!-- Add more options as needed -->
+        </select>
+        <br />
+        <br />
+
+        <label for="firearmCalibre">Firearm Calibre:</label> <br />
+        <select
+          id="firearmCalibre"
+          name="firearmCalibre"
+          formControlName="firearmCalibre"
+          class="option-input"
+          value="hello"
+        >
+          <option value="" style="text-align: center">
+            --Select Firearm Calibre--
+          </option>
+          <option value="(unknown)">(unknown)</option>
+          <option value=".17 HM2(4.4-18.1MM)">.17 HM2(4.4-18.1MM)</option>
+          <option value=".17 HMR(4.5-26.9MM)">.17 HMR(4.5-26.9MM)</option>
+          <option value=".17 Hornet(4.37-35.31mmR)">
+            .17 Hornet(4.37-35.31mmR)
+          </option>
+          <option value=".17 Remington(4.4-45.6mm)">
+            .17 Remington(4.4-45.6mm)
+          </option>
+          <option value=".17 Remington Fireball(4.4-36.1mm)">
+            .17 Remington Fireball(4.4-36.1mm)
+          </option>
+          <option value=".17 WSM(4.4-31MM)">.17 WSM(4.4-31MM)</option>
+          <option value=".204 Ruger(5.2-47mm)">.204 Ruger(5.2-47mm)</option>
+          <option value=".218 Bee(5.7-34.2mmR)">.218 Bee(5.7-34.2mmR)</option>
+          <option value=".22 BR Remington(5.69-38.15mm)">
+            .22 BR Remington(5.69-38.15mm)
+          </option>
+          <option value=".22 Hornet(5.7-34.2mmR)">
+            .22 Hornet(5.7-34.2mmR)
+          </option>
+          <option value=".22 Long Rifle(5.7-15.6mmR)">
+            .22 Long Rifle(5.7-15.6mmR)
+          </option>
+          <option value=".22 PPC(5.7-38.5MM)">.22 PPC(5.7-38.5MM)</option>
+          <option value=".22 Short(5.6-11mmR)">.22 Short(5.6-11mmR)</option>
+          <option value=".22 WMR(5.7-26.8MMR)">.22 WMR(5.7-26.8MMR)</option>
+          <option value=".22-250 Remington(5.7-48.6mm)">
+            .22-250 Remington(5.7-48.6mm)
+          </option>
+          <option value=".220 Swift(5.7-56.0mm)">.220 Swift(5.7-56.0mm)</option>
+          <option value=".221 Remington Fireball(5.7-35.6mm)">
+            .221 Remington Fireball(5.7-35.6mm)
+          </option>
+          <option value=".222 Remington(5.7-43.2mm)">
+            .222 Remington(5.7-43.2mm)
+          </option>
+          <option value=".223 Remington(5.56-45mm)">
+            .223 Remington(5.56-45mm)
+          </option>
+          <option value=".223 WSSM(5.7-42.4MM)">.223 WSSM(5.7-42.4MM)</option>
+          <option value=".224 Boz(5.56-23mm)">.224 Boz(5.56-23mm)</option>
+          <option value=".40 S&W">.40 S&W</option>
+          <option value=".45 ACP">.45 ACP</option>
+          <option value=".455 British Service">.455 British Service</option>
+          <option value="5.45*39mm">5.45*39mm</option>
+          <option value="5.56*45mm/.233 Remington">
+            5.56*45mm/.233 Remington
+          </option>
+          <option value="7.5*54mm">7.5*54mm</option>
+          <option value="7.62*25mm Tokarev">7.62*25mm Tokarev</option>
+          <option value="7.62*39mm ">7.62*39mm</option>
+          <option value="7.62*51 mm/.308 Winchester">
+            9 mm Makarov (9,2*18mm)
+          </option>
+          <option value="7.62*54R">7.62*54R</option>
+          <option value="7.7*56R .303 British ">7.7*56R .303 British</option>
+          <option value="7,92*57mm(8*57 IS)">7,92*57mm(8*57 IS)</option>
+          <option value="9 mm Makarov (9,2*18mm)">
+            9 mm Makarov (9,2*18mm)
+          </option>
+          <option value="9mm Para (9*19mm)">9mm Para (9*19mm)</option>
+          <!-- Add more options as needed -->
+        </select>
+
+        <br />
+        <br />
+
+        <label for="magazineCapacity">Magazine Capacity:</label> <br />
+        <select
+          id="magazineCapacity"
+          name="magazineCapacity"
+          formControlName="magazineCapacity"
+          class="option-input"
+          value="hello"
+        >   
+          <option value="" style="text-align: center">
+            --Select Magazine Capacity--
+          </option>
+          <option value="(Unknown Capacity)">(Unknown Capacity)</option>
+          <option value="15 in Number">15 in Number</option>
+          <option value="30 rounds">30 rounds</option>
+          <option value="4 in Number">4 in Number</option>
+          <option value="8 in Number">8 in Number</option>
+          <option value="Pistol Bullet">Pistol Bullet</option>
+          <!-- Add more options as needed -->
+        </select>
+
+        <br />
+        <br />
+
+        <label for="manufacturer">Manufacturer:</label> <br />
+        <select
+          id="manufacturer"
+          name="manufacturer"
+          formControlName="manufacturer"
+          class="option-input"
+          value="hello"
+        >
+          <option value="" style="text-align: center">
+            --Select Manufacturer--
+          </option>
+          <option value="(Unknown Manufacturer)">(Unknown Manufacturer)</option>
+          <option value="Bryco (BRY)">Bryco (BRY)</option>
+          <option value="Clerke (CLT)">Clerke (CLT)</option>
+          <option value="Country Defence Force">Country Defence Force</option>
+          <option value="Denel Land Systems">Denel Land Systems</option>
+          <option value="EIG (EIG)">EIG (EIG)</option>
+          <option value="Excam (ECM)">Excam (ECM)</option>
+          <option value="Fegyver Es Gepgyar">Fegyver Es Gepgyar</option>
+          <option value="Glock (GLC)">Glock (GLC)</option>
+          <option value="Harrington & Richardson (HR)">
+            Harrington & Richardson (HR)
+          </option>
+          <option value="Hawes (HAW)">Hawes (HAW)</option>
+          <option value="Heckler & Koch">Heckler & Koch</option>
+          <option value="Hopkins & Allen (HAA)">Hopkins & Allen (HAA)</option>
+          <option value="HY Hunter (HH)">HY Hunter (HH)</option>
+          <option value="Israel Military Industries (IMI)">
+            Israel Military Industries (IMI)
+          </option>
+          <option value="Iver Johnson (IJ)">Iver Johnson (IJ)</option>
+          <option value="Izhevsk Mechanical Plant">
+            Izhevsk Mechanical Plant
+          </option>
+          <option value="IZHMASH">IZHMASH</option>
+          <option value="JP Sauer & Sohn (SSS)">JP Sauer & Sohn (SSS)</option>
+          <option value="Kalashnikov">Kalashnikov</option>
+          <option value="MANURHIN, INDEP. FAMAE">MANURHIN, INDEP. FAMAE</option>
+          <option value="MAS">MAS</option>
+          <option value="Mauser (MAU)">Mauser (MAU)</option>
+          <option value="Nexter">Nexter</option>
+          <option value="Norinco">Norinco</option>
+          <option value="Phoenix (PHE)">Phoenix (PHE)</option>
+          <option value="Rossi (AMR)">Rossi (AMR)</option>
+          <option value="Royal Ordnance Factory">Royal Ordnance Factory</option>
+          <option value="Royal Small Arms Factory">
+            Royal Small Arms Factory
+          </option>
+          <option value="Ruger (SR)">Ruger (SR)</option>
+          <option value="Saco Defence US Irdnance">
+            Saco Defence US Irdnance
+          </option>
+          <option value="SIG Sauer (SIG)">SIG Sauer (SIG)</option>
+          <option value="Smith & Wesson (SW)">Smith & Wesson (SW)</option>
+          <option value="Sprinfield Armory">Sprinfield Armory</option>
+          <option value="Star (STA)">Star (STA)</option>
+          <option value="Steyr Mannlicher">Steyr Mannlicher</option>
+          <option value="Titan Manufacturing Co (TMC)">
+            Titan Manufacturing Co (TMC)
+          </option>
+          <option value="Tula Arsenal, Norinca">Tula Arsenal, Norinca</option>
+          <option value="Tula, Izhevsk">Tula, Izhevsk</option>
+          <!-- Add more options as needed -->
+        </select>
+        <br />
+        <div class="input-container">
+          <label for="inputField" class="input-label">Year Manufacture</label>
+          <input
+            type="date"
+            id="year"
+            name="year"
+            min="1900"
+            max="2099"
+            step="1"
+            id="inputField"
+            class="input-field"
+            placeholder=""
+            formControlName="yearManufacture"
+          />
+        </div>
+      </div>
+
+      <div class="column">
+        <h2>Firearm Serials & Marking information</h2>
+        <label for="source">Source:</label> <br />
+        <select
+          id="source"
+          name="source"
+          formControlName="source"
+          class="option-input"
+          value="hello"
+        >     
+        
+          <option value="" style="text-align: center">--Select Source--</option>
+          <option value="Amnesty">Amnesty</option>
+          <option value="Civilian Owned">Civilian Owned</option>
+          <option value="Disarmament">Disarmament</option>
+          <option value="Donations">Donations</option>
+          <option value="Importation">Importation</option>
+          <option value="Private Companies">Private Companies</option>
+          <option value="Seizure">Seizure</option>
+          <option value="State Owned">State Owned</option>
+          <!-- Add more options as needed -->
+        </select>
+
+        <br />
+        <br />
+        <label for="store">Store:</label> <br />
+        <select
+          id="store"
+          name="source"
+          formControlName="store"
+          class="option-input"
+          value="hello"
+        >
+          <option value="" style="text-align: center">--Select Store--</option>
+          <option value="Saris, Main Store">Saris, Main Store</option>
+          <option value="Saris Secondary Store">Saris Secondary Store</option>
+          <!-- Add more options as needed -->
+        </select>
+        <br />
+
+        <div class="input-container">
+          <label for="inputField" class="input-label">Additional Comment</label>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            formControlName="additionalComment"
+          ></textarea>
+        </div>
+
+        <div class="holder">
+          <label for="holder"> </label>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <button mat-raised-button type="submit" click="OnSubmit()">
+          Confirm Registration
+        </button>
+      </div>
+    </div>
+  </form>
+  <br /><br /><br /><br /><br /><br /><br />
+</div>                            

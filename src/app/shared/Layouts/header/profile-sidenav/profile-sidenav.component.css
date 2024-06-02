@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;  
+
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-container {
+    display: flex;
+    margin-bottom: 25px; 
+    border-bottom: 1px solid rgb(144, 143, 143);
+  }
+  
+  .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .username {
+    font-size: 20px;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+    align-items: start; 
+
+}  
+
+.actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.actions button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: left;
+}
+
+.actions button mat-icon {
+    margin-right: 8px;
+}
+
+  
+a {
+    text-transform: none;
+} 
+.edit-account {
+    color: rgb(21, 173, 54); 
+    cursor: pointer;
+}  
+.edit-account p:hover{
+    color: rgb(138, 150, 164); 
+    cursor: pointer;
+}  
+ 
+hr {
+  color: aquamarine;
+}

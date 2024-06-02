@@ -1,0 +1,224 @@
+
+.icon-container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container1,
+.container2 {
+  width: 48%; /* Adjust as needed */
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ margin: 5px;
+  border: 1px solid #d6d2d2; /* Border style: 1px solid black */
+  padding: 10px; /* Add some padding inside the box */
+  /* You can add more styles here */
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.icon img {
+  width: 32px; /* Adjust icon size */
+  height: 32px;
+}
+
+.checkbox {
+  margin-top: 5px;
+} 
+
+mat-card {
+  width: 860px;
+   height:700px; 
+   margin-left: 500px;
+   margin-top: 140px; 
+   margin-bottom: 30px;
+   background-color: rgb(238, 238, 238);
+   box-shadow:  6px 4px 6px rgb(177, 15, 15);
+}  
+
+.card {
+  margin-left: 5px;
+  background: linear-gradient(to top, #d8c89b, #f9f9f9);
+  margin-top: 10px; 
+  height: auto;
+  width: 750px;
+} 
+
+.container{
+  display: inline-flex;
+}  
+
+.user-name {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Password input */
+.password {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Button */
+.button {
+  background-color: #0c2a4a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  position: absolute;
+  right: 0; 
+  margin-right: 30px; 
+  width: 1px;
+  color: #dcc380;
+}
+
+.button:hover {
+  background-color: #dcc380;
+  color: #0c2a4a; 
+} 
+
+mat-card {
+  width: 800px; /* Set a fixed width of 800px */
+  margin: 20px auto 20px auto; /* Center-align the card horizontally */
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(68, 59, 59, 0.664);
+ background-color: #f4f4f4;
+  height: auto; /* Allow the card to expand to fit its content */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* Form styles */
+
+.label {
+  font-weight: bold;
+}
+
+.user-name, .password {
+  width: 300px;
+  
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* Button styles */
+.button {
+  padding: 10px 20px;
+  background-color: #0c2a4a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .user-name, .password, .button {
+    max-width: none; /* Remove the maximum width on smaller screens */
+  }
+
+  mat-card {
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 20px auto; /* Center-align the card horizontally on smaller screens */
+  }
+
+  /* Adjust the icon container for smaller screens */
+  .icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    width: calc(33.33% - 20px); /* Make icons take one-third of the width with some spacing */
+    text-align: center;
+    margin: 10px;
+  }
+
+  .icon img {
+    width: 32px; /* Adjust icon size for smaller screens */
+    height: 32px;
+  }
+}
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  .modal {
+    width: 90%;
+    max-width: 90%;
+    margin: 20px auto;
+  }
+
+  /* Adjust other styles as needed for small screens */
+}
+
+/* Medium screens (601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .modal {
+    width: 70%;
+    max-width: 70%;
+    margin: 40px auto;
+  }
+
+  /* Adjust other styles as needed for medium screens */
+}
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+  .modal {
+    width: 50%;
+    max-width: 50%;
+    margin: 60px auto;
+  }
+
+  /* Adjust other styles as needed for large screens */
+}
+
+/* Default modal styles */
+.modal {
+  width: 70%; /* Set the default width as you prefer */
+  max-width: 800px; /* Set a maximum width */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}  
+
+.danger-text {
+  color: red;
+}
+.error {
+  border: 1px solid red;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .modal {
+    width: 90%; /* Adjust the width for smaller screens */
+    max-width: none; /* Remove maximum width */
+    margin: 10px;
+  }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 50%; /* Adjust the width for larger screens */
+  }
+}

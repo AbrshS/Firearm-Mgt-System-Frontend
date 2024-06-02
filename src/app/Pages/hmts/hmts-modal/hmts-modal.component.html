@@ -1,0 +1,371 @@
+<div class="modal">
+  <div class="modal-content" *ngIf="isHmtsModal">
+    <mat-toolbar>
+      Firearm registration form for hunting, celebration, music and theater and
+      various scenes
+      <div class="CloseButton">
+     
+   
+            <mat-icon (click)="closeModal()">close</mat-icon>
+  
+      </div>
+    </mat-toolbar>
+
+    <form action="" [formGroup]="hmtsForm">
+      <div class="form-row">
+        <!-- First Column -->
+        <div class="form-column">
+          <p>Personal Detail</p>
+
+          <div class="form-group">
+            <label for="countryOfOrigin">Country of origin ፡</label>
+            <input
+              type="text"
+              id="countryOfOrigin"
+              formControlName="countryOfOrigin"
+              required
+            />
+          </div>
+          <br />
+
+          <div class="licensed-country">
+            <div class="select-wrapper col-md-3" style="width: 195px">
+              <label for="licensedCountry"
+                >Licensed country(State/Region):</label
+              >
+              <select
+                mat-select
+                id="licensedCountry"
+                class="form-control"
+                formControlName="licensedCountry"
+              >
+                <option value="Administrators">Administrators</option>
+                <option value="Supervisors">Supervisors</option>
+                <option value="Users">Users</option>
+              </select>
+            </div>
+
+            <div class="select-wrapper col-md-3" style="width: 195px">
+              <label for="levelOfService">Level Of Service:</label>
+              <select
+                mat-select
+                id="levelOfService"
+                class="option-input"
+                formControlName="levelOfService"
+              >
+                <option value="Adiss Ababa">Hunting</option>
+                <option value="Afar">Festival</option>
+                <option value="Benishangul Gumz">Music and Art</option>
+              </select>
+            </div>
+
+            <div class="select-wrapper col-md-3" style="width: 195px">
+              <label for="subcity">Zone/Subcity :</label>
+              <select
+                mat-select
+                id="subcity"
+                class="form-control"
+                formControlName="subcity"
+              >
+                <option value="Administrators">Administrators</option>
+                <option value="Supervisors">Supervisors</option>
+                <option value="Users">Users</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="district">District</label> <br />
+              <input
+                type="text"
+                id="district"
+                formControlName="district"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="kebele">kebele</label> <br />
+              <input
+                type="text"
+                id="kebele"
+                formControlName="kebele"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="specificArea">Specific area :</label> <br />
+              <input
+                type="text"
+                id="specificArea"
+                formControlName="specificArea"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label> <br />
+            <input
+              type="tel"
+              id="phoneNumber"
+              formControlName="phoneNumber"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="passportNo">P/Port/ID No:</label> <br />
+            <input
+              type="tel"
+              id="passportNo"
+              formControlName="passportNo"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label> <br />
+            <input type="Email" id="email" formControlName="email" required />
+          </div>
+        </div>
+
+        <!-- Third Column -->
+        <div class="form-column">
+          <p>Firearm Detail</p>
+
+          <div class="form-group">
+            <label for="magazineCapacity">Magazine Capacity</label> <br />
+            <input
+              type="text"
+              id="magazineCapacity"
+              formControlName="magazineCapacity"
+              required
+              [(ngModel)]="hmtsData.magazineCapacity"
+            />
+          </div>
+
+          <br />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="FirearmType"
+            formControlName="firearmType"
+            required
+            [(ngModel)]="hmtsData.firearmType"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmModel"
+            formControlName="firearmModel"
+            required
+            [(ngModel)]="hmtsData.firearmModel"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="manufacturer"
+            formControlName="manufacturer"
+            required
+            [(ngModel)]="hmtsData.manufacturer"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmMechanism"
+            formControlName="firearmMechanism"
+            required
+            [(ngModel)]="hmtsData.firearmMechanism"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmCalibre"
+            formControlName="firearmCalibre"
+            required
+            [(ngModel)]="hmtsData.firearmCalibre"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="yearManufacture"
+            formControlName="yearManufacture"
+            required
+            [(ngModel)]="hmtsData.yearManufacture"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="isFirearm"
+            formControlName="isFirearm"
+            required
+            [(ngModel)]="hmtsData.isFirearm"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="dateMarked"
+            formControlName="dateMarked"
+            required
+            [(ngModel)]="hmtsData.dateMarked"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="source"
+            formControlName="source"
+            required
+            [(ngModel)]="hmtsData.source"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="store"
+            formControlName="store"
+            required
+            [(ngModel)]="hmtsData.store"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="additionalComment"
+            formControlName="additionalComment"
+            required
+            [(ngModel)]="hmtsData.additionalComment"
+            readonly
+          />
+        </div>
+
+        <!-- Fourth Column -->
+        <div class="form-column">
+          <p>The body that registered the weapon</p>
+          <div class="form-group">
+            <label for="registeredBodyPosition">Position</label> <br />
+            <input
+              type="text"
+              id="registeredBodyPosition"
+              formControlName="registeredBodyPosition"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodyFullName">full name</label><br />
+            <input
+              type="text"
+              id="registeredBodyFullName"
+              formControlName="registeredBodyFullName"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredTitle">Title</label> <br />
+            <input
+              type="text"
+              id="registeredTitle"
+              formControlName="registeredTitle"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodyResponsibility">Responsibility</label>
+            <br />
+            <input
+              type="text"
+              id="registeredBodyResponsibility"
+              formControlName="registeredBodyResponsibility"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodySignature">signature</label> <br />
+            <input
+              type="tel"
+              id="registeredBodySignature"
+              formControlName="registeredBodySignature"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodyDate">Date</label> <br />
+            <input
+              type="date"
+              id="registeredBodyDate"
+              formControlName="registeredBodyDate"
+              required
+            />
+          </div>
+        </div>
+        <div class="container2">
+          <br />
+          <p>The Registered Body</p>
+          <div class="form-group">
+            <label for="registeredFullName">Full Name</label> <br />
+            <input
+              type="text"
+              id="registeredFullName"
+              formControlName="registeredFullName"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredPosition">Position</label> <br />
+            <input
+              type="text"
+              id="registeredPosition"
+              formControlName="registeredPosition"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredResponsibility">Responsibility</label><br />
+            <input
+              type="text"
+              id="registeredResponsibility"
+              formControlName="registeredResponsibility"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredSignature">signature</label> <br />
+            <input
+              type="tel"
+              id="registeredSignature"
+              formControlName="registeredSignature"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredDate">date</label><br />
+            <input
+              type="date"
+              id="registeredDate"
+              formControlName="registeredDate"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button (click)="onSubmit()">Confirm</button>
+    </form>
+  </div>
+</div>

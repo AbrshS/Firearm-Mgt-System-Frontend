@@ -1,0 +1,125 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: auto;
+    color: #0c2a4ac8;
+    height: auto; 
+    font-size: 12px;
+  } 
+
+.chat-container {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: Arial, sans-serif; 
+    position: absolute;
+top: 0;
+    right: 0;
+    margin: 0px 20px 20px 0px;  
+    background-color: white;
+
+  }
+  
+  .chat-header {
+    background: linear-gradient( #0c2a4a,#053469);
+    color: #dcc380;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .chat-messages {
+    padding: 10px;
+    overflow-y: scroll;
+  }
+  
+  .message {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .message-content {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+  }
+  
+  .message.sent .message-content {
+    background-color: #007bff;
+    color: white;
+    order: -1;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-top: 100px; 
+    outline: none;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px; 
+    outline: none;
+  }
+  
+  .chat-input button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  /* Add more CSS for styling and animations as desired */
+  /* Incoming Message */
+.message-incoming {
+    background-color: #f2f2f2;
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Outgoing Message */
+  .message-outgoing {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -1,0 +1,20 @@
+.sidenav {
+    height: auto;
+} 
+.sidenav-container { 
+  height: 100%; 
+  font-size: 16px;
+} 
+mat-tab-label{
+    width: 200px;
+} 
+ng-template {
+    width: 200px;
+
+}
+::ng-deep .mat-tab-label {
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  .add-button {
+    right: 0; position:absolute;
+  }

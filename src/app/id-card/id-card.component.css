@@ -1,0 +1,29 @@
+div{
+   margin-top: 50px;
+    text-align: center; 
+    display: inline-flex; 
+    gap: 20px;
+}
+.front {
+     width: 400px;
+     height: 300px; 
+     margin-left: 150px;
+}
+.back{
+    width: 400px;
+    height: 300px; 
+    
+} 
+img{
+    border-radius: 5px;
+}
+.print-button {
+    position: absolute;
+    right: 0;
+    margin-right: 30px; 
+    font-size: large;
+}
+.nobutton:hover {
+   background-color: rgb(181, 14, 14);
+   color: white;
+}

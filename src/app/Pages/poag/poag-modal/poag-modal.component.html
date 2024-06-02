@@ -1,0 +1,610 @@
+<div class="modal">
+  <div class="modal-content" *ngIf="IsPoag">
+    <mat-toolbar>
+      <p> Firearm registration form available at a private company,government
+        institution</p>
+   
+      <div class="CloseButton">
+            <mat-icon (click)="closeModal()">close</mat-icon>
+      </div> 
+
+    </mat-toolbar>
+
+    <form class="three-column-form" [formGroup]="poagForm" style="padding: 15px;">
+      <!-- First set of fields -->
+      <br />
+      <div class="form-row">
+        <!-- First Column -->
+        <div class="form-column">
+          <p>Organization Detail</p>
+
+          <div class="form-group">
+            <label for="nameOfOrganization">Name of Organisation:</label> <br />
+            <input
+              formControlName="nameOfOrganisation"
+              type="text"
+              id="nameOfOrganization"
+            />
+          </div>
+          <br />
+
+          <div class="select-wrapper col-md-3" style="width: 195px">
+            <label for="">Sector:</label>
+            <select
+              mat-select
+              id="accountType"
+              class="option-input"
+              formControlName="sector"
+            >
+              <option value="Agricultural">Agricultural</option>
+              <option value="Supervisors">Manufacturing</option>
+              <option value="Users">Service</option>
+            </select>
+          </div>
+          <br />
+
+          <div class="select-wrapper col-md-3" style="width: 195px">
+            <label for="">Size Of Capital:</label>
+            <select
+              mat-select
+              id="accountType"
+              class="option-input"
+              formControlName="sizeOfCapital"
+            >
+              <option value="+1000">+1000</option>
+              <option value="+10,000">+10,000</option>
+              <option value="+100,000">+100,000</option>
+              <option value="+1,000,000">+1,000,000</option>
+              <option value="+10,000,000">+10,000,000</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Second Column -->
+        <div class="form-column">
+          <p>Company Location</p>
+          <div class="select-wrapper col-md-3" style="width: 195px">
+            <label for="">State/Region :</label>
+            <select
+              mat-select
+              id="accountType"
+              class="option-input"
+              formControlName="region"
+            >
+              <option value="Administrators">Adiss Ababa</option>
+              <option value="Supervisors">Afar</option>
+              <option value="Users">Benishangul Gumz</option>
+              <option value="Users">Dire Dawa</option>
+              <option value="Users">Gambella</option>
+              <option value="Users">Harari</option>
+              <option value="Users">Oromia</option>
+              <option value="Users">Somali</option>
+              <option value="Users">Tigray</option>
+              <option value="Users">SNNPR</option>
+              <option value="Users">Sidama</option>
+              <option value="Users">SWEPR</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper col-md-3" style="width: 195px">
+            <label for="">Zone/Subcity :</label>
+            <select
+              mat-select
+              id="accountType"
+              class="option-input"
+              formControlName="subcity"
+            >
+              <option value="Administrators">Administrators</option>
+              <option value="Supervisors">Supervisors</option>
+              <option value="Users">Users</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="District">District</label> <br />
+            <input
+              type="text"
+              id="District"
+              formControlName="district"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="kebele">kebele</label> <br />
+            <input type="text" id="kebele" formControlName="kebele" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Specific area :</label> <br />
+            <!--this will be fillout with the longtitude and latitude-->
+            <input
+              type="text"
+              id="email"
+              formControlName="specificArea"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone-number">Phone Number:</label>
+            <input
+              type="tel"
+              id="phone-number"
+              formControlName="phoneNumber"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone-number">Email:</label>
+            <input
+              type="Email"
+              id="phone-number"
+              formControlName="email"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Third Column -->
+        <div class="form-column">
+          <p>Firearm Detail</p>
+
+          <div class="form-group">
+            <label for="magazineCapacity">Magazine Capacity</label> <br />
+            <input
+              type="text"
+              id="magazineCapacity"
+              formControlName="magazineCapacity"
+              required
+              [(ngModel)]="poagData.magazineCapacity"
+            />
+          </div>
+          <br />
+
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="FirearmType"
+            formControlName="firearmType"
+            required
+            [(ngModel)]="poagData.firearmType"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmModel"
+            formControlName="firearmModel"
+            required
+            [(ngModel)]="poagData.firearmModel"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="manufacturer"
+            formControlName="manufacturer"
+            required
+            [(ngModel)]="poagData.manufacturer"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmMechanism"
+            formControlName="firearmMechanism"
+            required
+            [(ngModel)]="poagData.firearmMechanism"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmCalibre"
+            formControlName="firearmCalibre"
+            required
+            [(ngModel)]="poagData.firearmCalibre"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="yearManufacture"
+            formControlName="yearManufacture"
+            required
+            [(ngModel)]="poagData.yearManufacture"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="isFirearm"
+            formControlName="isFirearm"
+            required
+            [(ngModel)]="poagData.isFirearm"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="dateMarked"
+            formControlName="dateMarked"
+            required
+            [(ngModel)]="poagData.dateMarked"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="source"
+            formControlName="source"
+            required
+            [(ngModel)]="poagData.source"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="store"
+            formControlName="store"
+            required
+            [(ngModel)]="poagData.store"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="additionalComment"
+            formControlName="additionalComment"
+            required
+            [(ngModel)]="poagData.additionalComment"
+            readonly
+          />
+        </div>
+
+        <!-- Fourth Column -->
+        <div class="form-column">
+          <p>The body that registered the weapon</p>
+          <div class="form-group">
+            <label for="registeredPosition">Position</label> <br />
+            <input
+              type="text"
+              id="registeredPosition"
+              formControlName="registeredPosition"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredPositionFullName">full name</label><br />
+            <input
+              type="text"
+              id="registeredPositionFullName"
+              formControlName="registeredFullName"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredTitle">Title</label> <br />
+            <input
+              type="text"
+              id="registeredTitle"
+              formControlName="registeredTitle"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredResponsibility">Responsibility</label> <br />
+            <input
+              type="email"
+              id="registeredResponsibility"
+              formControlName="registeredResponsibility"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredSignature">signature</label> <br />
+            <input
+              type="tel"
+              id="registeredSignature"
+              formControlName="registeredSignature"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredDate">date</label> <br />
+            <input
+              type="date"
+              id="registeredDate"
+              formControlName="registeredDate"
+              required
+            />
+          </div>
+        </div>
+        <div class="container2">
+          <br />
+          <p>The Registered Body</p>
+          <div class="form-group">
+            <label for="registeredBodyFullName">Full Name</label> <br />
+            <input
+              type="text"
+              id="registeredBodyFullName"
+              formControlName="registeredBodyFullName"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodyResponsibility">Responsibility</label
+            ><br />
+            <input
+              type="text"
+              id="registeredBodyResponsibility"
+              formControlName="registeredBodyResponsibility"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodySignature">signature</label> <br />
+            <input
+              type="tel"
+              id="registeredBodySignature"
+              formControlName="registeredBodySignature"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodyDate">date</label><br />
+            <input
+              type="date"
+              id="registeredBodyDate"
+              formControlName="registeredBodyDate"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button (click)="onSubmit()">Confirm</button>
+    </form>
+  </div>
+</div>
+
+<!-- 
+
+<div class="modal">
+    <div class="modal-content">  
+
+               <mat-toolbar> Firearm registration form available at a private company,government institution
+                <div class="CloseButton">
+                  <span>
+                    <button mat-button (click)="closeModal()"><mat-icon>close</mat-icon></button>
+                  </span>
+                </div>
+               </mat-toolbar>  
+
+      <mat-tab-group> 
+        
+        <mat-tab label="Organization Detail"> 
+          <p class="form-title"></h2>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="full-name">Name of Organisation:</label> 
+              <input type="text" id="name-of-organization" formControlName="nameOfOrganization" required>
+            </div>  
+            <label for=""> Select Sector :</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Agricultural sector" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Agricultural Sector
+              </label>
+            </div> <br>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Manufacturing sector" id="flexCheckChecked">
+              <label class="form-check-label" for="flexCheckChecked">
+                Manufacturing sector
+              </label>
+            </div> <br>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Service sector" id="flexCheckChecked">
+              <label class="form-check-label" for="flexCheckChecked">
+                Service sector
+              </label>
+            </div>
+    
+            <div class="input-group">
+              <label for="">Size Of Capital</label>
+              <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+          
+            </div> 
+                <br>
+            <button type="submit" class="submit-button" [disabled]="!form.valid">Next</button> 
+                <br>
+          </form>
+                    <br>
+             </mat-tab>
+  
+  
+             
+             <mat-tab label="Company Location"  routerLink="/tab2"> 
+              <h2 class="form-title"></h2>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+                  <div class="select-wrapper col-md-3" style="width: 195px;">
+                      <label for="">State/Region :</label>
+                      <select mat-select id="accountType" class="form-control">
+                        <option mat-option value="">Select Account Type</option>
+                        <option value="Administrators">Administrators </option>
+                        <option value="Supervisors">Supervisors </option>
+                        <option value="Users">Users </option>
+                      </select>
+                    </div>
+            
+                    <div class="select-wrapper col-md-3" style="width: 195px;">
+                      <label for="">Zone/Subcity :</label>
+                      <select mat-select id="accountType" class="form-control">
+                        <option mat-option value="">Select Account Type</option>
+                        <option value="Administrators">Administrators </option>
+                        <option value="Supervisors">Supervisors </option>
+                        <option value="Users">Users </option>
+                      </select>
+                    </div>
+            
+                <div class="form-group">
+                  <label for="position">District</label>
+                  <input type="text" id="position" formControlName="position" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="email">kebele</label>
+                  <input type="text" id="email" formControlName="email" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="phone-number">Specific Area:</label>
+                  <input type="tel" id="phone-number" formControlName="phone_number" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="phone-number">Phone Number:</label>
+                  <input type="tel" id="phone-number" formControlName="phone_number" required>
+                </div>  
+  
+                
+                <div class="form-group">
+                  <label for="phone-number">Email:</label>
+                  <input type="Email" id="phone-number" formControlName="phone_number" required>
+                </div> 
+                       <br>
+                <button type="submit" class="submit-button" [disabled]="!form.valid">Next</button> 
+                <br>
+              </form>
+                 </mat-tab>
+  
+          <mat-tab label="Firearm Detail">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="full-name">Firearm Type</label> 
+                <input type="text" id="full-name" formControlName="full_name" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="title">Manufactured Country</label>
+                <input type="text" id="title" formControlName="title" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="position">Manufactured Year</label>
+                <input type="text" id="position" formControlName="position" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="email">Caliber</label>
+                <input type="email" id="email" formControlName="email" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="phone-number">Mark Number</label>
+                <input type="tel" id="phone-number" formControlName="phone_number" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="comment">Bullet Number</label>
+                <textarea id="comment" formControlName="comment" rows="4" required></textarea>
+              </div>  
+              <div class="form-group">
+                <label>Marked:</label>
+                <label class="radio-label">
+           <input type="radio" value="true">
+           Yes
+         </label>
+         <label class="radio-label">
+           <input type="radio"  value="false">
+           No
+         </label>
+              </div>
+              
+              
+              <button type="submit" class="submit-button" [disabled]="!form.valid">Next</button>
+              <br>
+                
+            </form>
+            </mat-tab>
+  
+          <mat-tab label="The body that registered the weapon">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="main-container">
+                <div class="container1"> 
+                  <br>
+                  <label for="" style=" font-size: 16px;">The body that registered the weapon </label>
+                  <div class="form-group"> 
+                    <label for="full-name">Position</label> 
+                    <input type="text" id="full-name" formControlName="full_name" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="title">full name</label>
+                    <input type="text" id="title" formControlName="title" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="position">Title</label>
+                    <input type="text" id="position" formControlName="position" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="email">Responsibility</label>
+                    <input type="email" id="email" formControlName="email" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="phone-number">signature</label>
+                    <input type="tel" id="phone-number" formControlName="phone_number" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="comment">date</label>
+                    <input type="text" id="title" formControlName="title" required>
+                  </div>  
+                </div>
+                <div class="container2"> 
+                  <br>
+                  <label for="" style="font-weight: bold; font-size: 16px;">The registered body</label>
+                  <div class="form-group">
+                    <label for="full-name">Full Name</label> 
+                    <input type="text" id="full-name" formControlName="full_name" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="title">Responsibility</label>
+                    <input type="text" id="title" formControlName="title" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="phone-number">signature</label>
+                    <input type="tel" id="phone-number" formControlName="phone_number" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="comment">date</label>
+                    <input type="text" id="title" formControlName="title" required>
+                  </div> 
+    
+                </div>
+              </div>
+              </form>
+            
+            
+            </mat-tab>
+        </mat-tab-group>
+       
+      </div>
+    </div>
+-->

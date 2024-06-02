@@ -1,0 +1,50 @@
+.sticky-sidebar {
+  position: sticky;
+  top: 0;
+  /* Adjust height based on your layout */
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px; 
+  z-index: 999;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 10px 15px;
+  color: #333; /* Link text color */
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.sidebar-link:hover {
+  background-color: #eeeeee; /* Hover background color */
+  color: #315cb8; /* Hover text color */
+}
+.sidebar-link::backdrop {
+  background-color: #eeeeee; /* Hover background color */
+  color: #315cb8; /* Hover text color */
+}
+.sidebar-group {
+  margin-bottom: 20px;
+}
+
+.sidebar-group-name {
+  display: block;
+  color: #888;
+  font-size: 12px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+}
+/* Define the color for the active link */
+/* Define the color for the active link */
+.sidebar-link.active,
+.sidebar-link:hover {
+  color: #dcc380; 
+  background-color: #0c2a4ae3; 
+  border-radius: 5px; /* Change to the desired color */
+}

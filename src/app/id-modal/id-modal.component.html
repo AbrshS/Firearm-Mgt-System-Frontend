@@ -1,0 +1,222 @@
+<div class="modal">
+    <div class="modal-content">
+     
+            <div id="section">
+            <div>
+                  <br>
+                  <div style="text-align: center;">
+                      <p style="font-weight: bold; font-size: 20px; color: #0c2a4c;">
+                          በኢትዮጵያ ፌደራል ፖሊስ ኮሚሽን የጦር መሳሪያ ባለቤትነት መታወቂያ ካርድ 
+                          <button printTitle="PDF printout" class="print-button" (click)="printThisPage()" > <mat-icon>print</mat-icon></button>
+                         
+                      
+                      <br>
+                        Ethiopia Federal Police commission firearms possesive right ID-card
+                      </p>
+                  </div>
+                  
+              </div>
+              <br>
+              
+              <div class="input-container">
+                <p>የመ-ቁጥር:- 
+                <input type="text" class="bottom-line-input"> </p>
+                <p>ID-NO </p>
+              </div>
+              
+          
+                <br>
+                <div class="container">
+                  <div class="rectangle">
+                    <img [src]="previewImageSrc" alt="" id="previewImage">
+                  </div>
+                </div>
+                <br>
+                
+          
+                <div class="text">
+                  <mat-icon class="camera-icon" (click)="onTakePictureClick()">photo_camera</mat-icon>
+                  <label for="fileInput" class="download-label">
+                    <mat-icon class="download-icon">cloud_download</mat-icon>
+                  </label>
+                  <input type="file" (change)="onFileChange($event)" id="fileInput" accept="image/png, image/jpeg" style="display: none;">
+                </div>
+                <br>
+                <br>
+          <div>
+              
+            <div class="input-one">
+              <p>ሙሉ ስም:- 
+              <input type="text" class="bottom-line-input-one"> </p>
+              <p>Full Name </p>
+            </div>
+              
+                  <p>
+                    <br>
+                     &nbsp;&nbsp;ጾታ:- &nbsp;&nbsp;
+                     <mat-radio-group aria-label="Select an option">
+                     <mat-radio-button value="1">ወንድ</mat-radio-button> &nbsp;&nbsp; &nbsp;&nbsp;
+                     <mat-radio-button value="2">ሴት</mat-radio-button>
+                    </mat-radio-group> <br>
+                    Sex
+                      
+              </p>
+              <div class="input-two">
+                <p>የትውልድ ዘመን:- 
+                <input type="text" class="bottom-line-input-two" matInput [matDatepicker]="picker"> 
+            
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                
+                
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                የትዳር ሁኔታ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <mat-radio-group aria-label="Select an option">
+                     <mat-radio-button value="1">ያገባ</mat-radio-button>
+                     &nbsp;&nbsp;&nbsp;&nbsp;
+                     <mat-radio-button value="2">ያላገባ</mat-radio-button>
+                   </mat-radio-group>
+                  </p>
+                <p>Birth Date  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Marital status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Married&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Unmarried</p>
+                </div>
+              <br>
+                              <div class="input-two">
+                                አድራሻ:-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                ክልል:- 
+                                <input type="text" class="bottom-line-input-two">
+                                ዞን/ ክ/ከተማ:- 
+                                <input type="text" class="bottom-line-input-two">
+                                ወረዳ:- 
+                                <input type="text" class="bottom-line-input-two">
+                                ቀበሌ:- 
+                                <input type="text" class="bottom-line-input-two">
+                                ስልክ ቁጥር:
+                                <span matPrefix>+251 &nbsp;</span>
+                                <input type="tel" matInput placeholder="9 00 00 00 00" class="bottom-line-input-two">
+                                
+                      </div>
+                      <br>
+                      Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Zone/SubCity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      District&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Kebele&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Phone No
+                       <br>
+                       <br>
+                       <br>
+                    
+                       <p>
+          
+          
+                        የታጠቀው መሳሪያ :- 
+                        <input type="text" class="bottom-line-input-two">
+                        የውግ ቁጥር :- 
+                        <input type="text" class="bottom-line-input-two">
+                        ካሊበር መጠን :- 
+                        <input type="text" class="bottom-line-input-two">
+                        ጥይት ብዛት :- 
+                        <input type="text" class="bottom-line-input-two">
+                        ካርታ ብዛት :- 
+                        <input type="text" class="bottom-line-input-two">
+          
+                         
+                          <br>
+                          Type of firearm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Serial No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Caliber size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          No of bullet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      &nbsp;&nbsp;&nbsp;
+                          No of casina
+                           </p>
+                           <br>
+                           <div class="input-one">
+                            <p>የተሰጠበት ቀን:- 
+                            <input type="text" class="bottom-line-input-one"> </p>
+                            <p>Issued date </p>
+                          </div>
+                           <br>
+                          <div class="input-one">
+                            <p>የሚያበቃበት ጊዜ:- 
+                            <input type="text" class="bottom-line-input-one"> </p>
+                            <p>Expiry date  </p>
+                          </div>
+                          
+                            <br>
+                       
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          
+          <p style="font-weight: bold;">
+              የያዥው ፊርማ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              ክብ ማህተብ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              የሰጠው ኃላፊ ስም እና ፊርማ
+          </p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <p style="font-weight: bold; font-size: 17px;">
+              ማሳሰቢያ:-ይህ የጦር መሳሪያ ባለቤትነት መታወቂያ ደብተር የያዘ ሰው በየትኛው ኢትዮጵያ ግዛት ውስጥ የፌዴራል እና ክልል ፀጥታ አካል ሲጠየቅ የማሳየት ግዴታ አለበት::
+          </p>
+              </div>
+          </div>
+
+    </div>
+  </div>

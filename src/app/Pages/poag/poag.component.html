@@ -1,0 +1,327 @@
+<div class="main-container">
+  <div class="content-container">
+    <div class="container-for-siderbtn-and-heading">
+      <p>
+        Firearm registration form available at a private company,government
+        institution
+      </p>
+    </div>
+
+    <br /><br /><br />
+
+    <mat-card>
+      <div class="btn1">
+        <input type="text" placeholder="Search.." name="search" />
+      </div>
+      <br /><br /><br />
+      <div class="row">
+        <div class="col-md-2">
+          <select id="source" class="form-control">
+            <option value="">Select source</option>
+            <option value="Amnesty">Amnesty</option>
+            <option value="Civilian Owned">Civilian Owned</option>
+            <option value="Disarmament">Disarmament</option>
+            <option value="Donations">Donations</option>
+            <option value="Importation">Importation</option>
+            <option value="Private Companies">Private Companies</option>
+            <option value="Seizure">Seizure</option>
+            <option value="State Owned">State Owned</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="registered" class="form-control">
+            <option value="">Select Registered</option>
+            <option value="2015">2015</option>
+            <option value="2020">2020</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="yearOfImport" class="form-control">
+            <option value="">Select Year Of Import</option>
+            <option value="(unknown)">(unknown)</option>
+            <option value="1939">1939</option>
+            <option value="1940">1940</option>
+            <option value="1941">1941</option>
+            <option value="1942">1942</option>
+            <option value="1943">1943</option>
+            <option value="1944">1944</option>
+            <option value="1945">1945</option>
+            <option value="1946">1946</option>
+            <option value="1947">1947</option>
+            <option value="1948">1948</option>
+            <option value="1949">1949</option>
+            <option value="1950">1950</option>
+            <option value="1951">1951</option>
+            <option value="1952">1952</option>
+            <option value="1953">1953</option>
+            <option value="1954">1954</option>
+            <option value="1955">1955</option>
+            <option value="1956">1956</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="type" class="form-control">
+            <option value="">Select type</option>
+            <option value="(unknown)">(unknown)</option>
+            <option value="Assault Rifle">Assault Rifle</option>
+            <option value="Carbine">Carbine</option>
+            <option value="Derringer">Derringer</option>
+            <option value="Lever-Action Handgun">Lever-Action Handgun</option>
+            <option value="Macarov">Macarov</option>
+            <option value="Machine Gun">Machine Gun</option>
+            <option value="Motar">Motar</option>
+            <option value="Muzzle Loader">Muzzle Loader</option>
+            <option value="Pistol">Pistol</option>
+            <option value="Revolver">Revolver</option>
+            <option value="Rifle">Rifle</option>
+            <option value="Rocket Launcher">Rocket Launcher</option>
+            <option value="Shot Gun">Shot Gun</option>
+            <option value="Sniper Rifle">Sniper Rifle</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="model" class="form-control">
+            <option value="">Select Model</option>
+            <option value="(unknown)">(unknown)</option>
+            <!-- Add all the other options here -->
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="calibre" class="form-control">
+            <option value="">Select Calibre</option>
+            <option value="(unknown)">(unknown)</option>
+            <!-- Add all the other options here -->
+          </select>
+        </div>
+      </div>
+      <!-- Add another row with the remaining selects here -->
+      <div class="row">
+        <div class="col-md-2">
+          <select id="calibre" class="form-control">
+            <option value="">Select Calibre</option>
+            <option value="(unknown)">(unknown)</option>
+            <!-- Add all the other options here -->
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="location" class="form-control">
+            <option value="">Select Location</option>
+            <option value="(unknown)">(unknown)</option>
+            <!-- Add all the other options here -->
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="condition" class="form-control">
+            <option value="">Select Condition</option>
+            <option value="(unknown)">(unknown)</option>
+            <!-- Add all the other options here -->
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="country" class="form-control">
+            <option value="">Select Country</option>
+            <option value="(unknown)">(unknown)</option>
+            <!-- Add all the other options here -->
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="registrationStatus" class="form-control">
+            <option value="">Select Registration Status</option>
+            <option value="(unknown)">(unknown)</option>
+            <!-- Add all the other options here -->
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select id="demil" class="form-control">
+            <option value="">Select Demil</option>
+            <option value="(unknown)">(unknown)</option>
+            <!-- Add all the other options here -->
+          </select>
+        </div>
+      </div>
+    </mat-card>
+    <br />
+    <br />
+
+    <app-return-modal
+      *ngIf="showReturn"
+      [returnData]="returnData"
+    ></app-return-modal>
+    <app-loss *ngIf="showLoss" [lossData]="lossData"></app-loss>
+    <app-distruction
+      *ngIf="showDistruction"
+      [distructionData]="distructionData"
+    ></app-distruction>
+
+    <mat-table [dataSource]="dataSource">
+      <!-- Define your table columns here -->
+
+      <ng-container style="height: 1px" matColumnDef="REF#">
+        <th mat-header-cell *matHeaderCellDef style="background-color: #f1f1f1">
+          REF#
+        </th>
+        <td *matCellDef="let element">
+          {{ element["REF#"] }} <span>#REF</span> {{ element.id }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ORGANIZATION">
+        <div>
+          <th
+            style="background-color: #f1f1f1"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            ORGANIZATION
+          </th>
+        </div>
+        <td mat-cell *matCellDef="let element">
+          {{ element.ORGANIZATION }} {{ element.nameOfOrganisation }} <br />
+          {{ element.sector }} <br />
+          {{ element.sizeOfCapital }} <br />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ADDRESS">
+        <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>
+          ADDRESS
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.ADDRESS }} {{ element.region }} <br />
+          {{ element.subcity }} <br />
+          {{ element.district }} <br />
+          {{ element.kebele }} <br />
+          {{ element.phoneNumber }} <br />
+          {{ element.email }} <br />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="WHO REGISTERD THE FIREARM">
+        <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>
+          WHO REGISTERED THE FIREARM
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element["WHO REGISTERD THE FIREARM"] }}
+          {{ element.registeredFullName }} <br />
+          {{ element.registeredTitle }} <br />{{ element.registeredPosition }}
+          <br />
+          {{ element.registeredEmail }} <br />
+          {{ element.registeredSignature }} <br />
+          {{ element.registeredDate }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="REGISTERED BODY">
+        <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>
+          REGISTERED BODY
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element["REGISTERED BODY"] }}
+          {{ element.registeredBodyResponsibility }} <br />
+          {{ element.registeredBodySignature }} <br />
+          {{ element.registeredBodyDate }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="FIREARM">
+        <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>
+          FIREARM
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.FIREARM }} {{ element.firearmType }}
+          {{ element.firearmModel }} <br />
+          <span> </span> {{ element.firearmCalibre }} <br />
+          <span> </span> {{ element.firearmMechanism }} <br />
+          <span> </span> {{ element.manufacturerSerial }} <br />
+          <span> </span> {{ element.magazineCapacity }} <br />
+          <span> </span> {{ element.yearManufacture }} <span> </span>
+          {{ element.manufacturerSerial }} <br />
+          <span> </span> {{ element.isFirearm }} <br />
+          <span> </span> {{ element.dateMarked }} <br />
+          <span> </span> {{ element.markedBy }} <br />
+          <span> </span> {{ element.source }} <br />
+          <span> </span> {{ element.store }} <br />
+          <span> </span> {{ element.additionalComment }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ACTION">
+        <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>
+          ACTION
+        </th>
+        <td *matCellDef="let element">
+          {{ element.ACTION }}
+
+          <button
+            mat-button
+            (click)="openLoss()"
+            (click)="sendDataToLoss(element)"
+          >
+            <a style="text-decoration: none"
+              ><span> <mat-icon>highlight_off</mat-icon>Report loss</span></a
+            ></button
+          ><br />
+          <button
+            mat-button
+            (click)="openDistruction()"
+            (click)="sendDataToDistruction(element)"
+          >
+            <a style="text-decoration: none"
+              ><span> <mat-icon> report_problem </mat-icon>Destruction</span></a
+            ></button
+          ><br />
+          <button
+            mat-button
+            (click)="openReturn()"
+            (click)="sendDataToReturn(element)"
+          >
+            <a style="text-decoration: none"
+              ><span> <mat-icon>arrow_back</mat-icon>Return</span></a
+            >
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="MANAGE">
+        <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>
+          MANAGE
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.MANAGE }}
+          <button
+            style="background-color: white"
+            type="button"
+            data-bs-toogle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <mat-icon style="background-color: white">menu</mat-icon></button
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button style="background-color: white" class="edit">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Define more columns similarly -->
+
+      <tr
+        mat-header-row
+        *matHeaderRowDef="displayedColumns"
+        style="height: auto"
+      ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </mat-table>
+  </div>
+</div>   

@@ -1,0 +1,177 @@
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Increase the value if necessary */ 
+  background-color: rgba(219, 214, 214, 0.5);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    padding-left: 0px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 1500px; 
+    height: 600px; 
+    position: absolute;
+    top:50.5%;
+    overflow-y: auto;
+    left: 50%;
+    width: 600px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background:white;
+    box-sizing: border-box;
+    box-shadow: 0 8px 8px rgba(49, 65, 136, 0.6);
+    border-radius: 10px;
+
+  }  
+
+  .close_button {
+   position: absolute;
+   right: 0;
+   cursor: pointer;
+  }
+  .recovery-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .recovery-box .user-box {
+    position: relative;
+  }
+  .recovery-box .user-bo input {
+    margin-left: 30px;
+    font-size: 12px;
+    color:  #0c2a4c;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: #f0efef80;
+  }
+  .recovery-box .user-box input {
+    width: 500px;
+    padding: 10px 0;
+    font-size: 12px;
+    color:  #0c2a4c;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color: #f0efef80;
+  }
+  .recovery-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #0c2a4c;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .recovery-box .user-box input ~ label,
+  .recovery-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color:  #0c2a4c;
+    font-size: 12px;
+  }
+  
+  .recovery-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #dcc380;
+    width: 260px;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 1px;
+    margin-left: 300px;
+    letter-spacing: 4px
+  }
+  
+  .recovery-box a:hover {
+    background: #0c2a4c;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0c2a4c,
+                0 0 25px #0c2a4c,
+                0 0 50px #0c2a4c,
+                0 0 100px #0c2a4c;
+  }
+  
+  .recovery-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  
+  
+  
+  .table{
+    width: 40px;
+    margin-left:10px;
+    margin-top: 1%;
+    
+    
+    }
+  
+  
+    th {
+   
+      text-align: left;
+      border: 1px solid #dddddd;
+     
+      color: #0c2a4c;
+      font-size:medium ;
+      
+  
+     
+    }
+    td{
+  
+      border: 1px solid #dddddd;
+      color: #0c2a4c;
+      width: 300px;
+    
+      
+      
+    }
+    .user-table-cell{
+      background-color:  #0c2a4c;
+     
+      
+    }
+    .button {
+      text-align: center;
+      margin-top: 30px; 
+      
+  }
+
+ .button a{
+  background-color: #f1f1f1;
+  padding: 5px;
+  border-radius: 5px;
+ }
+
+  .button a:hover {
+      background: #ccc;
+      color: rgb(57, 58, 62);
+      border-radius: 2px;
+      padding: 5px; 
+      cursor: pointer;
+      
+  }

@@ -1,0 +1,185 @@
+<div class="modal">
+  <div class="modal-content" *ngIf="isReturnModal">
+    <div class="recovery-box">
+      <div class="close_button">
+        <mat-icon (click)="closeModal()">close</mat-icon>
+      </div>
+      <form [formGroup]="ReturnForm">
+        <div>
+          <h2 style="color: #0c2a4c">Firearm Return Report</h2>
+          <p>
+            To complete the transfer of firearms listed alongside,Kindly fill
+            all the information in this form.When satisfied,that all the details
+            are correct ,click on the <strong>"CONFIRM RETURN" </strong>button
+            below
+          </p>
+          <hr />
+        </div>
+        <br />
+        <div class="user-bo">
+          <p>Selected Firearm to be Returned</p>
+          <div>
+            <input
+              type="text"
+              name="manufacturerSerial"
+              id="manufacturerSerial"
+              formControlName="manufacturerSerial"
+              [(ngModel)]="returnData.manufacturerSerial"
+              readonly
+            />
+            <input
+              type="text"
+              name="isFirearm"
+              id="isFirearm"
+              formControlName="isFirearm"
+              [(ngModel)]="returnData.isFirearm"
+              readonly
+            />
+            <input
+              type="text"
+              name="dateMarked"
+              id="dateMarked"
+              formControlName="dateMarked"
+              [(ngModel)]="returnData.dateMarked"
+              readonly
+            />
+            <input
+              type="text"
+              name="markedBy"
+              id="markedBy"
+              formControlName="markedBy"
+              [(ngModel)]="returnData.markedBy"
+              readonly
+            />
+
+            <input
+              type="text"
+              name="firearmType"
+              id="firearmType"
+              formControlName="firearmType"
+              [(ngModel)]="returnData.firearmType"
+              readonly
+            />
+            <input
+              type="text"
+              name="firearmModel"
+              id="firearmModel"
+              formControlName="firearmModel"
+              [(ngModel)]="returnData.firearmModel"
+              readonly
+            />
+            <input
+              type="text"
+              name="firearmMechanism"
+              id="firearmMechanism"
+              formControlName="firearmMechanism"
+              [(ngModel)]="returnData.firearmMechanism"
+              readonly
+            />
+            <input
+              type="text"
+              name="firearmCalibre"
+              id="firearmCalibre"
+              formControlName="firearmCalibre"
+              [(ngModel)]="returnData.firearmCalibre"
+              readonly
+            />
+          </div>
+
+          <div>
+            <input
+              type="text"
+              name="magazineCapacity"
+              id="magazineCapacity"
+              formControlName="magazineCapacity"
+              [(ngModel)]="returnData.magazineCapacity"
+              readonly
+            />
+            <input
+              type="text"
+              name="yearManufacture"
+              id="yearManufacture"
+              formControlName="yearManufacture"
+              [(ngModel)]="returnData.yearManufacture"
+              readonly
+            />
+            <input
+              type="text"
+              name="source"
+              id="source"
+              formControlName="source"
+              [(ngModel)]="returnData.source"
+              readonly
+            />
+            <input
+              type="text"
+              name="store"
+              id="store"
+              formControlName="store"
+              [(ngModel)]="returnData.store"
+              readonly
+            />
+            <input
+              type="text"
+              name="additionalComment"
+              id="additionalComment"
+              formControlName="additionalComment"
+              [(ngModel)]="returnData.additionalComment"
+              readonly
+            />
+          </div>
+        </div>
+
+        <br />
+        <div class="user-box">
+          <br />
+          <input type="text" id="status" formControlName="status" />
+          <label for="status">Status:</label>
+        </div>
+
+        <div class="user-box">
+          <br />
+          <input
+            type="text"
+            id="store"
+            formControlName="store"
+            [(ngModel)]="returnData.store"
+          />
+          <label for="store">Firearms Returned To:</label>
+        </div>
+
+        <div class="user-box">
+          <br />
+          <input
+            type="text"
+            id="firearmReturnedTo"
+            formControlName="firearmReturnedTo"
+          />
+          <label for="firearmReturnedTo">Reason To Return:</label>
+        </div>
+
+        <div class="user-box">
+          <br />
+          <input type="text" id="authorizedBy" formControlName="authorizedBy" />
+          <label for="authorizedBy">Authorized By:</label>
+        </div>
+
+        <div class="user-box">
+          <br />
+          <input
+            type="date"
+            id="authorizedDate"
+            formControlName="authorizedDate"
+          />
+          <label for="authorizedDate">Authorization Date:</label>
+        </div>
+
+        <br />
+        <br />
+        <button mat-raised-button (click)="onSubmit()">Confirm recovery</button>
+        <br />
+        <br />
+      </form>
+    </div>
+  </div>
+</div>

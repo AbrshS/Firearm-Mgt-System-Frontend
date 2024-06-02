@@ -1,0 +1,46 @@
+
+footer {
+  position: relative;
+    background-color: #0c2a4c;
+    color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    bottom: 0; 
+  }
+.container {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+nav p {
+    color: #dcc380;
+    margin-left: 10px;
+    text-decoration: none; 
+    position: absolute;
+    right: 0; 
+    margin-right: 20px;
+    bottom: 0;
+    font-size: 10px;
+
+}
+.text {
+  font-size: larger;
+  margin-left: -30px; 
+  
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+  .vertical-line p{
+    margin-top: 10px;
+  }
+  p{
+    margin-left: 20px;
+    color: #dcc380;
+  }  
+  

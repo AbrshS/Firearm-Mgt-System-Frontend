@@ -1,0 +1,142 @@
+
+
+    <div class="header-text">
+
+      <h2 style="color: rgb(155, 31, 31);">Lost Firearm</h2>
+      </div>
+       <!--new Officer button-->
+            <br>
+            <br>
+            <br>  
+      <mat-card> 
+        <br> 
+      
+      <div class="search-container">
+        <input type="text"  placeholder="Enter search query">
+        <button>Go</button>
+      </div>
+      
+      <div class="custom-select-row">
+        <div class="custom-select">
+          <select [(ngModel)]="option1" name="option1">
+            <option [ngValue]="''" disabled>Select Firearm Type</option>
+            <option value="(unknown)">(unknown) </option>
+            <option value="Assault Rifle">Assault Rifle </option>
+            <option value="Carbine">Carbine </option>
+            <option value="Derringer">Derringer </option>
+            <option value="Lever-Action Handgun">Lever-Action Handgun </option>
+            <option value="Macarov">Macarov </option>
+            <option value="Machine Gun">Machine Gun </option>
+            <option value="Motar">Motar </option>
+            <option value="Muzzle Loader">Muzzle Loader </option>
+            <option value="Pistol">Pistol </option>
+            <option value="Revolver">Revolver </option>
+            <option value="Rifle">Rifle </option>
+            <option value="Rocket Launcher">Rocket Launcher </option>
+            <option value="Shot Gun">Shot Gun </option>
+            <option value="Sniper Rifle">Sniper Rifle </option>
+          </select>
+      </div>
+      
+      <div class="custom-select">
+          <select [(ngModel)]="option2" name="option2">
+            <option [ngValue]="''" disabled>Select Position</option>
+            <option value="Inspector">Inspector </option>
+            <option value="Constable">Constable </option>
+            <option value="Special Agents">Special Agents </option>
+            <option value="K-9 Unit">K-9 Unit </option>
+            <option value="Border Patrol Agents">Border Patrol Agents </option>
+          </select>
+      </div>
+      
+        <div class="custom-select">
+          <select [(ngModel)]="option3" name="option3">
+            <option [ngValue]="''" disabled>Select Sex</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div> 
+      </mat-card>
+      <br>
+      <br>
+      <!-- <app-popup-child2 *ngIf="showPopupFlag === 2" (close)="hidePopup()"></app-popup-child2>
+      <app-popup-child3 *ngIf="showPopupFlag === 3" (close)="hidePopup()"></app-popup-child3>  -->
+      <!--Table Part-->
+      <div class="table">
+      
+      <br> 
+      
+      <app-recovery *ngIf="showRecovery" [lossData]="lossData"></app-recovery>
+      
+      <mat-table [dataSource]="dataSource" >
+        <!-- Define your table columns here -->
+        <ng-container style="height: 1px;" matColumnDef="REF#">
+          
+            <th  mat-header-cell *matHeaderCellDef style="background-color: #f1f1f1;"> REF# </th>
+          
+          
+          <td  *matCellDef="let element"> {{ element['REF#'] }} <span>#REF</span>
+            {{ element.id }} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="REPORTED BY">
+          <div >
+          <th style="background-color: #f1f1f1;" mat-header-cell *matHeaderCellDef> REPORTED BY </th>
+        </div>
+          <td mat-cell *matCellDef="let element"> {{ element['REPORTED BY'] }} 
+           <span style="font-weight: bold;"> 
+            {{ element.fullName }}</span> <br>
+            {{element.fpId}} 
+           
+          </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="FIREARM">
+          <th style="background-color: #f1f1f1;" mat-header-cell *matHeaderCellDef>FIREARM</th>
+          <td mat-cell *matCellDef="let element"> {{ element.FIREARM }} 
+            <span>{{ element.firearmModel }}</span> <br> 
+            <span>Manufacturer:</span>{{ element.manufacturer }} <br>
+            <span>Calibre:</span>{{ element.firearmCalibre }} <br>
+            <span>Year Of Manufacture:</span>{{ element.yearManufacture }} <br>
+            <span>Source:</span>{{ element.source }} <br>
+            <span>Datemarked:</span>{{ element.dateMarked }} <br>
+            <span>Manufacture Serial:</span>{{ element.manufactureSerial }} <br>
+            <span>Assigned Serial:</span>{{ element.assignedSerial }} <br>
+            <span>Marked By:</span>{{ element.isFirearm }} <br>
+            <span></span>
+      
+          </td>
+        </ng-container>   
+      
+        <ng-container matColumnDef="REPORTED ON">
+          <th style="background-color: #f1f1f1;" mat-header-cell *matHeaderCellDef> REPORTED ON </th>
+          <td mat-cell *matCellDef="let element"> {{ element['REPORTED ON']}}
+                           {{element.reportedOn}}
+          </td>
+        </ng-container>
+                                
+        <ng-container matColumnDef="ACTION">
+          <th style="background-color: #f1f1f1;" mat-header-cell *matHeaderCellDef> ACTION </th>
+          <td  *matCellDef="let element"> {{ element.ACTION }} 
+      
+            <button mat-button (click)="openRecovery()" (click)="sendDataToLoss(element)"><a style="text-decoration: none;"><span>	<mat-icon>arrow_back</mat-icon>Recovery</span></a></button>
+      
+          </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="MANAGE">
+          <th style="background-color: #f1f1f1;" mat-header-cell *matHeaderCellDef> MANAGE </th>
+          <td mat-cell *matCellDef="let element"> {{ element.MANAGE }} 
+            <button style="background-color: white;" type="button" data-bs-toogle="modal" data-bs-target="#exampleModal"><mat-icon style="background-color: white;">menu</mat-icon></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <button style="background-color: white;" class="edit"><mat-icon>edit</mat-icon></button>
+          </td>
+        </ng-container>
+      
+        <!-- Define more columns similarly -->
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" style="height: auto;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </mat-table>
+      </div>  
+      

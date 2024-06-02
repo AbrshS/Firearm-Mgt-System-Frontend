@@ -1,0 +1,50 @@
+<h2>Posted Data Table</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">REF#</th>
+      <th scope="col">FIREARM</th>
+      <th scope="col">SERIAL NO</th>
+      <th scope="col">HOLDER</th>
+      <th scope="col">STATUS</th>
+      <th scope="col">ACTION</th>
+      <th scope="col">MANAGE</th>
+      <th scope="col"></th>
+      <!-- Add more headers for other properties -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of postedData">
+      <td>{{ item.assignedserial }}</td>
+      <td>
+        {{ item.firearmtype }} <br />
+        {{ item.manufacturer }} <br />
+        {{ item.firearmcalibre }} <br />
+        {{ item.firearmcalibre }} <br />
+        {{ item.yearmanufacture }} <br />
+        {{ item.source }}
+      </td>
+
+      <td>
+        {{ item.manufactureserial }} <br />
+        {{ item.assignedserial }} <br />
+        {{ item.markedby }}
+      </td>
+
+      <td>{{ item.store }}</td>
+
+      <td>{{ item.Datemarked }}</td>
+      <td>
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-taget="#exampleModal"
+        >
+          Edit
+        </button>
+        <button>Delete</button>
+      </td>
+      <!-- Display other properties -->
+    </tr>
+  </tbody>
+</table>

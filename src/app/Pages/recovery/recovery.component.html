@@ -1,0 +1,185 @@
+<div class="modal">
+  <div class="modal-content" *ngIf="isRecoveryModal">
+    <div class="recovery-box">
+      <div class="close_button">
+        <mat-icon class="mat-18" (click)="closeModal()">close</mat-icon>
+      </div>
+      <form [formGroup]="RecoveryForm">
+        <div>
+          <h2 style="color: #0c2a4c">Firearm Recovery Report</h2>
+          <p>
+            To complete the transfer of firearms listed alongside,Kindly fill
+            all the information in this form.When satisfied,that all the details
+            are correct ,click on the <strong>"CONFIRM RECOVERY" </strong>button
+            below
+          </p>
+          <hr />
+        </div>
+        <br />
+        <div class="user-bo">
+          <p>Selected Firearm Detail</p>
+          <input
+            type="text"
+            name="manufacturerSerial"
+            id="manufacturerSerial"
+            formControlName="manufacturerSerial"
+            [(ngModel)]="lossData.manufacturerSerial"
+            readonly
+          />
+          <input
+            type="text"
+            name="isFirearm"
+            id="isFirearm"
+            formControlName="isFirearm"
+            [(ngModel)]="lossData.isFirearm"
+            readonly
+          />
+          <input
+            type="text"
+            name="dateMarked"
+            id="dateMarked"
+            formControlName="dateMarked"
+            [(ngModel)]="lossData.dateMarked"
+            readonly
+          />
+          <input
+            type="text"
+            name="markedBy"
+            id="markedBy"
+            formControlName="markedBy"
+            [(ngModel)]="lossData.markedBy"
+            readonly
+          />
+          <input
+            type="text"
+            name="firearmType"
+            id="firearmType"
+            formControlName="firearmType"
+            [(ngModel)]="lossData.firearmType"
+            readonly
+          />
+          <input
+            type="text"
+            name="firearmModel"
+            id="firearmModel"
+            formControlName="firearmModel"
+            [(ngModel)]="lossData.firearmModel"
+            readonly
+          />
+          <input
+            type="text"
+            name="firearmMechanism"
+            id="firearmMechanism"
+            formControlName="firearmMechanism"
+            [(ngModel)]="lossData.firearmMechanism"
+            readonly
+          />
+          <input
+            type="text"
+            name="firearmCalibre"
+            id="firearmCalibre"
+            formControlName="firearmCalibre"
+            [(ngModel)]="lossData.firearmCalibre"
+            readonly
+          />
+          <input
+            type="text"
+            name="magazineCapacity"
+            id="magazineCapacity"
+            formControlName="magazineCapacity"
+            [(ngModel)]="lossData.magazineCapacity"
+            readonly
+          />
+          <input
+            type="text"
+            name="yearManufacture"
+            id="yearManufacture"
+            formControlName="yearManufacture"
+            [(ngModel)]="lossData.yearManufacture"
+            readonly
+          />
+          <input
+            type="text"
+            name="source"
+            id="source"
+            formControlName="source"
+            [(ngModel)]="lossData.source"
+            readonly
+          />
+          <input
+            type="text"
+            name="store"
+            id="store"
+            formControlName="store"
+            [(ngModel)]="lossData.store"
+            readonly
+          />
+          <input
+            type="text"
+            name="additionalComment"
+            id="additionalComment"
+            formControlName="additionalComment"
+            [(ngModel)]="lossData.additionalComment"
+            readonly
+          />
+        </div>
+
+        <br />
+        <div class="user-box">
+          <br />
+          <input type="text" id="status" formControlName="status" />
+          <label for="status">Status:</label>
+        </div>
+        <div class="user-box">
+          <br />
+          <input
+            type="text"
+            id="firearmReturnedTo"
+            formControlName="firearmReturnedTo"
+          />
+          <label for="firearmReturnedTo">Firearms Returned To:</label>
+        </div>
+        <div class="user-box">
+          <br />
+          <input
+            type="text"
+            id="reportedBy"
+            name=""
+            required=""
+            formControlName="reportedBy"
+          />
+          <label for="reportedBy">Reported By:</label>
+        </div>
+        <div class="user-box">
+          <br />
+          <input
+            type="date"
+            name=""
+            id="authorizedDate"
+            value=""
+            formControlName="authorizedDate"
+          />
+          <label for="authorizedDate">Authorization Date:</label>
+        </div>
+        <div class="user-box">
+          <br />
+          <input
+            type="text"
+            name=""
+            id="authorizedBy"
+            required=""
+            formControlName="authorizedBy"
+          />
+          <label for="authorizedBy">Authorized By:</label>
+        </div>
+
+        <br />
+        <br />
+
+        <button mat-raised-button (click)="OnSubmit()">Confirm recovery</button>
+        <br />
+        <br />
+      </form>
+    </div>
+  </div>
+</div>

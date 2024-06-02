@@ -1,0 +1,376 @@
+<div class="modal">
+  <div class="modal small">
+    <div class="modal-content" *ngIf="IsUserModal">
+      <mat-toolbar>
+        New System User
+        <span class="spacer"></span>  
+          <mat-icon style="color: #dcc380" (click)="onClose()">close</mat-icon>
+
+      </mat-toolbar>
+      <form [formGroup]="signupForm">
+        <!-- First set of fields -->
+        <br /> 
+                             
+        <div class="form-row">
+          <!-- First Column -->
+          <div class="form-column">
+            <h2>General Information</h2>
+            <div
+              class="form-group"
+              
+            >
+              <label for="firstname">First Name</label> 
+              <small
+              *ngIf="
+                signupForm.controls['firstname'].dirty &&
+                signupForm.controls['firstname'].hasError('required')
+              "
+              class="danger-text"
+            >
+              * First name is required
+            </small> <br />
+              <input formControlName="firstname" type="text" id="firstname" 
+             />
+            
+            </div>
+            <div
+              class="form-group"
+            
+            >
+              <label for="middlename">Middle Name</label> 
+              <small
+                *ngIf="
+                  signupForm.controls['middlename'].dirty &&
+                  signupForm.controls['middlename'].hasError('required')
+                "
+                class="danger-text"
+              >
+                * Middle name is required
+              </small> <br />
+              <input formControlName="middlename" type="text" id="middlename" />
+              
+            </div>
+            <div
+              class="form-group"
+              
+            >
+              <label for="lastname">Last Name</label>   <small
+              *ngIf="
+                signupForm.controls['lastname'].dirty &&
+                signupForm.controls['lastname'].hasError('required')
+              "
+              class="danger-text"
+            >
+              * Last name is required
+            </small> <br />
+              <input formControlName="lastname" type="text" id="lastname" />
+            
+            </div>
+            <div
+              class="form-group"
+              
+            >
+              <label for="efpid">EFPID:</label>    <small
+              *ngIf="
+                signupForm.controls['efpid'].dirty &&
+                signupForm.controls['efpid'].hasError('required')
+              "
+              class="danger-text"
+            >
+              * EFPID is required
+            </small> <br />
+              <input
+                style="
+                  width: 200px;
+                  padding: 8px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                "
+                formControlName="efpid"
+                type="number"
+                id="efpid"
+              />
+           
+            </div>
+
+            <div
+              class="form-group"
+             
+            >
+              <label for="full-name">Extension</label>  <small
+              *ngIf="
+                signupForm.controls['extension'].dirty &&
+                signupForm.controls['extension'].hasError('required')
+              "
+              class="danger-text"
+            >
+              * Extension is required
+            </small> <br />
+              <input formControlName="extension" type="text" id="Jobtype" />
+             
+            </div>
+
+            <div
+              class="form-group"
+             
+            >
+              <label for="full-name">Mobile</label>
+              <small
+                *ngIf="
+                  signupForm.controls['mobile'].dirty &&
+                  signupForm.controls['mobile'].hasError('required')
+                "
+                class="danger-text"
+              >
+                * Mobile is required
+              </small>
+              <br />
+              <input formControlName="mobile" type="text" id="Mobile" />
+            </div>
+
+            <div
+              class="form-group"
+              
+            >
+              <label for="full-name">Email</label>
+              <small
+                *ngIf="
+                  signupForm.controls['email'].dirty &&
+                  signupForm.controls['email'].hasError('required')
+                "
+                class="danger-text"
+              >
+                * Email is required
+              </small>
+              <br />
+              <input formControlName="email" type="email" id="Email" />
+            </div>
+          </div>
+
+          <!-- Second Column -->
+
+          <div class="form-column">
+            <h2>Job Information</h2>
+            <div
+              class="form-group"
+              
+            >
+              <label for="job">Job</label>
+              <small
+                *ngIf="
+                  signupForm.controls['job'].dirty &&
+                  signupForm.controls['job'].hasError('required')
+                "
+                class="danger-text"
+              >
+                * Job is required
+              </small>
+              <br />
+              <input formControlName="job" type="text" id="job" />
+            </div>
+
+            <div
+              class="form-group"
+              
+            >
+              <label for="Unit">Unit</label>
+              <small
+                *ngIf="
+                  signupForm.controls['unit'].dirty &&
+                  signupForm.controls['unit'].hasError('required')
+                "
+                class="danger-text"
+              >
+                * Unit is required
+              </small>
+              <br />
+              <input formControlName="unit" type="text" id="Unit" />
+            </div>
+          </div>
+
+          <!-- Third Column -->
+
+          <!-- Fourth Column -->
+          <div class="form-column">
+            <h2>Login Information</h2>
+
+            <div class="select-wrapper col-md-3" style="width: 195px">
+              <label for="accountType">Account Type</label>   <small
+              *ngIf="
+                signupForm.controls['Loginicon'].dirty &&
+                signupForm.controls['Loginicon'].hasError('required')
+              "
+              class="danger-text"
+            >
+              * Login icon is required
+            </small>
+              <select
+                mat-select
+                id="accountType"
+                class="form-control"
+                formControlName="accounttype"
+              >
+                <option value="Admin">Admin</option>
+                <option value="Manager">Manager</option>
+                <option value="Guest">Guest</option>
+              </select>
+            </div>
+            <br />
+
+            <div
+              class="custom-select"
+             
+            >
+              <label for="">Login Icon</label>
+              <small
+                *ngIf="
+                  signupForm.controls['Loginicon'].dirty &&
+                  signupForm.controls['Loginicon'].hasError('required')
+                "
+                class="danger-text"
+              >
+                * Login icon is required
+              </small>
+              <br />
+              <mat-select
+                id="accountType"
+                class="form-control"
+                formControlName="Loginicon"
+              >
+                <br />
+                <!-- Add your options here -->
+                <mat-option value="car">
+                  <img
+                    src="assets/car.png"
+                    alt="Administrator"
+                    class="option-image"
+                  />
+                  Car
+                </mat-option>
+                <mat-option value="grenade">
+                  <img
+                    src="assets/grenade.png"
+                    alt="User"
+                    class="option-image"
+                  />
+                  Grenade
+                </mat-option>
+                <mat-option value="handcuff">
+                  <img
+                    src="assets/handcuff.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Handcuff
+                </mat-option>
+                <mat-option value="vest">
+                  <img src="assets/vest.jpg" alt="Guest" class="option-image" />
+                  Vest
+                </mat-option>
+                <mat-option value="walkie">
+                  <img
+                    src="assets/walkie.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Walkie
+                </mat-option>
+                <mat-option value="hellicopter">
+                  <img
+                    src="assets/hellicopter.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Hellicopter
+                </mat-option>
+                <mat-option value="gun">
+                  <img src="assets/gun.jpeg" alt="Guest" class="option-image" />
+                  Gun
+                </mat-option>
+                <mat-option value="millitary">
+                  <img
+                    src="assets/military.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Millitary
+                </mat-option>
+                <mat-option value="officerCup">
+                  <img
+                    src="assets/officercup.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Officer Cup
+                </mat-option>
+                <mat-option value="shoes">
+                  <img
+                    src="assets/shoes.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Shoes
+                </mat-option>
+                <mat-option value="bullet">
+                  <img
+                    src="assets/bullet.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Bullet
+                </mat-option>
+                <mat-option value="tank">
+                  <img src="assets/tank.png" alt="Guest" class="option-image" />
+                  Tank
+                </mat-option>
+              </mat-select>
+            </div>
+
+            <div
+              class="form-group"
+             
+            >
+              <label for="full-name">Username</label>
+              <small
+                *ngIf="
+                  signupForm.controls['username'].dirty &&
+                  signupForm.controls['username'].hasError('required')
+                "
+                class="danger-text"
+              >
+                * Username is required
+              </small>
+              <br />
+              <input formControlName="username" type="text" id="Username" />
+            </div>
+
+            <div
+              class="form-group"
+             
+            >
+              <label for="password">Password</label>
+              <small
+                *ngIf="
+                  signupForm.controls['password'].dirty &&
+                  signupForm.controls['password'].hasError('required')
+                "
+                class="danger-text"
+              >
+                * Password is required
+              </small>
+              <br />
+              <input formControlName="password" type="password" id="password" />
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <button mat-raised-button type="submit" (click)="signup()">
+              Register
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

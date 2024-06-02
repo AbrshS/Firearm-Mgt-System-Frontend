@@ -1,0 +1,117 @@
+<app-banner></app-banner>
+<mat-toolbar>
+  <img 
+    class="toggle-btn"
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    src="assets/flogo.png"
+    alt="logo"
+    style="width: 60px; height: 60px; cursor: pointer;"
+  />
+
+  <app-modal></app-modal>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation (App Header) -->
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <app-header></app-header>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="Roles-class">
+      <div class="text">
+        <p class="head">Roles</p>
+        <p>
+          Manage and create roles to control access and permissions within the
+          system.
+        </p>
+      </div>
+      <div class="create-role-btn">
+        <button mat-raised-button>
+          <mat-icon>add</mat-icon>Create New Role
+        </button>
+      </div>
+    </div>
+
+    <div class="default-class">
+      <div class="default-text">
+        <h2>Default roles</h2>
+        <p>
+          Manage and create roles to control access and permissions within the
+          system.
+        </p>
+        <hr />
+      </div>
+
+      <div class="admin-text">
+        <div class="description">
+          <h3>Admin</h3>
+          <p>
+            The Admin role oversees the entire system, with full access to all
+            features and functionalities.
+          </p>
+        </div>
+
+        <div class="add-role-btn">
+          <button mat-button><mat-icon>add</mat-icon>Add New User</button>
+        </div>
+      </div>
+      <hr />
+      <div class="Manager-text">
+        <div class="description">
+          <h3>Manager</h3>
+          <p>
+            Managers focus on specific system aspects, controlling user
+            permissions and overseeing departmental activities.
+          </p>
+        </div>
+        <div class="add-role-btn">
+          <button mat-button><mat-icon>add</mat-icon>Add New User</button>
+        </div>
+      </div>
+      <hr />
+      <div class="Guest-text">
+        <div class="description">
+          <h3>Guest</h3>
+          <p>
+            Guests have limited access to view specific information and perform
+            certain tasks within the system.
+          </p>
+        </div>
+        <div class="add-role-btn">
+          <button mat-button><mat-icon>add</mat-icon>Add New User</button>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="Custom-roles">
+      <div class="default-text">
+        <h2>Custom roles</h2>
+        <p>Custom roles are reusable sets of permissions</p>
+        <hr />
+      </div>
+
+      <div class="heading">
+        <div class="roles">
+          <h3>Roles</h3>
+        </div>
+        <div class="users">
+          <h3>Users</h3>
+        </div>
+      </div>
+
+      <div class="roles">
+        <div class="roles-description">
+          <h4>Administrator</h4>
+          <p>User with this role can do anything</p>
+        </div>
+
+        <div class="add-user-btn">
+          <button mat-button><mat-icon>add</mat-icon>Add User</button>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

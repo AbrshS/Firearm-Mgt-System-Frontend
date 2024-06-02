@@ -1,0 +1,36 @@
+{
+  "signup1": [
+    {
+      "firstname": "Abraham",
+      "middlename": "Shiferaw",
+      "lastname": "Girma",
+      "efpid": 234534,
+      "job": "Officer",
+      "unit": "Military",
+      "extension": "3243",
+      "mobile": "0989253506",
+      "email": "abrshs114@gmail.com",
+      "accounttype": "Administrators",
+      "Loginicon": "car",
+      "username": "abrsh",
+      "password": "1212",
+      "id": 1
+    },
+    {
+      "firstname": "Abraham",
+      "middlename": "Shiferaw",
+      "lastname": "Girma",
+      "efpid": 2343,
+      "job": "Officer",
+      "unit": "patrol",
+      "extension": "3243",
+      "mobile": "0989253506",
+      "email": "abrshs114@gmail.com",
+      "accounttype": "Users",
+      "Loginicon": "vest",
+      "username": "dagi",
+      "password": "1111",
+      "id": 2
+    }
+  ]
+}

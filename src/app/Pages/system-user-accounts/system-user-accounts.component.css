@@ -1,0 +1,409 @@
+
+.btn button:hover{
+  background-color: #0c2a4c;
+  color: white;
+}
+
+.btn1 {
+  text-align: right;
+  margin-top: 10px;
+}  
+
+.add-button {
+  right: 0; position:absolute;
+}
+
+
+.btn1 button:hover {
+  background-color: #0c2a4c;
+  color: white;
+}
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.select-wrapper {
+  margin-right: 10px;
+ font-size: 12px; 
+}
+
+.btn1 {
+  position: absolute;
+  text-align: right;
+  right: 0;
+  margin-right: 20px;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+select {
+  background-color: #e6e6e6;
+  font-size: 12px;
+  width: 100%; 
+  color: #0c2a4c; 
+
+} 
+
+
+input[type="text"] {
+  height: 30px;
+  padding: 2px;
+}
+
+button {
+  color: rgb(55, 143, 47);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+} 
+
+.buttons button{
+  color: #0c2a4c;
+}
+button a {
+  background-color: none;
+  color: #0c2a4c;
+}
+
+button a:hover {
+  background-color: none;
+  color: #0b131b;
+}
+
+td .action-buttons {
+  color: #7c0000;
+}
+
+td {
+  border: 1px solid rgb(199, 199, 199);
+   width: 400px;
+   font-size: 12px;   
+   color: #0c2a4c;  
+   background-color: rgb(255, 255, 255);
+}
+
+th {
+  border: 1px solid rgb(199, 199, 199);
+  background-color: #f1f1f1;
+  color: #0c2a4cb8;
+  font-size: 12px; 
+  text-align: center;
+  margin-bottom: -19px;  
+}
+
+.form-control {
+  height: 30px;
+  border-radius: 5px;
+  border-color: #c5c3c3;
+  margin-top: -5px;
+  margin-right: 20px;
+} 
+
+.main-container {
+  display: flex;
+  margin-top: -10px;
+  background-color: white;
+  z-index: 999;
+  width: 100%; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar-container {
+  width: 200px;
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar-container.open {
+  width: 0;
+}
+
+.content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Animations */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.toggle-button {
+  position: fixed;
+  top: 0px;
+  left: 10px;
+  background-color: #0c2a4c;
+  border: none;
+  cursor: pointer;
+  color: #0c2a4c;
+}
+
+.toggle-button mat-icon {
+  font-size: 24px;
+} 
+
+.main-container {
+  display: flex;
+  margin-top: 1px;
+}
+
+.content-container {
+  flex-grow: 1;
+  overflow-x: auto;
+  margin-top: 0px;
+}
+
+.content {
+  flex-shrink: 0;
+  width: max-content;
+  padding: 20px;
+  transition: padding 0.3s ease-in-out;
+}
+
+.content.open {
+  padding-left: 200px;
+} 
+
+.sidebar{
+  background-color: rgb(255, 255, 255);
+  display: inline-block; 
+  box-shadow: 0 0 0px #ffffff,
+  0 0 10px #dddedf,
+  0 0 5px #ffffff,
+  0 0 5px #ffffff; 
+} 
+
+mat-sidenav {
+  width:350px;   
+  display: inline-block;
+  text-align: left;
+  z-index: -10px;
+  background-color: #f3f3f3;
+} 
+
+mat-nav-list{
+  position: relative;
+ 
+}
+
+.container-for-siderbtn-and-heading {
+  display: inline-flex;
+}
+
+.pages {
+  display: inline-block;
+}  
+
+a{  
+  position: relative;
+  left: 0;
+  text-decoration:  none; 
+  color: #0c2a4c; 
+  text-transform: capitalize;
+}
+a:hover{
+  left: 10px;
+  transition: left 0.2s ease-in-out;
+} 
+span{
+  position: relative;
+  left: 0; 
+  font-size: 12px;
+  color: #5c5d5f;
+}   
+.popup-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.buttons{
+  display: inline-flex;
+  width: 200px;
+} 
+span {
+  margin-left: 5px;
+} 
+h2 {
+  margin-left: 20px;
+  color: #7e7e7e;
+} 
+
+mat-card {
+  height: 150px;
+  background-color: #f1f1f1;
+  width: 95%;
+  margin-left: 30px; 
+}  
+
+/* Apply styles to the table container */
+
+/* Style the table header */
+mat-header-cell {
+  background-color: #7c0000; /* Header background color */
+  font-weight: bold;
+}
+
+/* Style table cells */
+.mat-cell, .mat-header-cell {
+  padding: 8px 16px; /* Cell padding */
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Bottom border for cells */
+}
+
+/* Add hover effect on rows */
+.mat-row:hover {
+  background-color: #e0e0e0; /* Hover background color */
+}
+.table-responsive{ 
+  margin-right: 30px;
+  margin-left: 30px;
+} 
+
+/* Add CSS styles for larger screens */
+.table-responsive {
+  overflow-x: auto; /* Add horizontal scroll for small screens */
+} 
+mat-sidenav-container {
+  height: 100%;
+}
+p {
+  color: rgb(31, 155, 31); 
+  font-size: large; 
+  margin: 10px;
+}
+/* Apply specific styles for smaller screens (adjust breakpoints as needed) */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto; /* Add horizontal scroll for smaller screens */
+  }
+} 
+
+.container-for-siderbtn-and-heading {
+  display: inline-flex;
+}  
+.custom-table {
+  width: 100%;
+  max-width: 800px; /* Set a maximum width for the table */
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 12px; 
+  color: #0c2a4c;
+}
+
+mat-header-cell, mat-cell {
+  padding: 8px; /* Reduce padding to make the table more compact */
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+mat-header-cell {
+  font-weight: 600;
+  background-color: #f9f9f9;
+}
+
+mat-cell {
+  background-color: #ffffff;
+}
+
+.sub-text {
+  color: #5c5d5f;
+  font-size: 12px;
+}
+ span {
+  color: #0c2a4c;
+ }
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.custom-table th, .custom-table td {
+  border: 1px solid #e0e0e0;
+}
+
+.custom-table th {
+  background-color: #f5f5f5;
+  font-size: 0.9em; /* Adjust font size */
+  color: #424242;
+}
+
+.custom-table td {
+  font-size: 0.85em; /* Adjust font size */
+}
+
+.custom-table .mat-header-row {
+  height: 35px; /* Adjust height */
+}
+
+.custom-table .mat-row {
+  height: 35px; /* Adjust height */
+}
+
+@media (max-width: 600px) {
+  .custom-table {
+    max-width: 100%;
+  }
+
+  mat-header-cell, mat-cell {
+    padding: 4px; /* Further reduce padding for small screens */
+  }
+
+  .custom-table th, .custom-table td {
+    font-size: 0.75em; /* Further adjust font size for small screens */
+  }
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px; 
+  width: 50px; 
+  background-color: white; /* Add some space between buttons */
+}
+
+button a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Inherit the color from the button */
+} 
+
+button a span {
+  display: flex;
+  align-items: center;
+}
+
+button a mat-icon {
+  margin-right: 5px; /* Add some space between the icon and text */
+} 
+.disabled-row {
+  background-color: rgb(199, 145, 145);
+  opacity: 0.5;
+  pointer-events: none;
+}

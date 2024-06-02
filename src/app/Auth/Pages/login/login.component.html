@@ -1,0 +1,270 @@
+<br />
+<br />
+<br />
+<mat-card>
+  <div class="container">
+    <div class="header">
+      <img
+        src="assets/flogo.png"
+        alt="logo"
+        style="width: 50px; height: 50px"
+      />
+    </div>
+    <div class="title">
+      <h4 style="margin-top: 0px; font-weight: bold">
+        Ethiopian Federal Police
+      </h4>
+      <h5 style="margin-top: -19px">
+        Small Arms / Light Weapons Tracing System V.0.0
+      </h5>
+    </div>
+  </div>
+  <div class="account-login">
+    <h1>Account Login</h1>
+  </div>
+  <mat-card class="card">
+    <h3>Steps To Login</h3>
+    <li>
+      <ol>
+        1.Select the icon associated with your Account
+      </ol>
+      <ol>
+        2. Enter your Username
+      </ol>
+      <ol>
+        3. Enter your password and click on the login button
+      </ol>
+    </li>
+    <br />
+    <p>
+      <span style="font-weight: bold">NB:</span> if unable to login, contact the
+      administrator
+    </p>
+  </mat-card>
+  <br />
+
+  <p style="font-size: 16px; color: rgb(28, 83, 146)">
+    <span style="text-transform: uppercase; color: rgb(28, 83, 146)"
+      >STEP 1:</span
+    >Select Your Authentication Icon
+  </p>
+  <small
+    *ngIf="
+      loginForm.controls['loginicon'].dirty &&
+      loginForm.controls['loginicon'].hasError('required')
+    "
+    class="danger-text"
+    >* Authentication icon is required</small
+  >
+  <form [formGroup]="loginForm">
+    <div
+      class="icon-container"
+      [class.error]="
+        loginForm.controls['loginicon'].dirty &&
+        loginForm.controls['loginicon'].hasError('required')
+      "
+    >
+      <div class="container1">
+        <!-- Icons and checkboxes for container1 -->
+        <div class="icon">
+          <img src="assets/car.png" alt="Lock" />
+          <input
+            type="checkbox"
+            id="checkbox1"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox1">car</label><br />
+        </div>
+
+        <div class="icon">
+          <img src="assets/grenade.png" alt="Key" />
+          <input
+            type="checkbox"
+            id="checkbox2"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox2">gernade</label><br />
+        </div>
+        <div class="icon">
+          <img src="assets/handcuff.png" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">handcuff</label><br />
+        </div>
+        <div class="icon">
+          <img src="assets/vest.jpg" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">vest</label><br />
+        </div>
+        <div class="icon">
+          <img src="assets/walkie.png" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">walkie</label><br />
+        </div>
+        <div class="icon">
+          <img src="assets/hellicopter.png" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">hellicopter</label><br />
+        </div>
+      </div>
+
+      <div class="container2">
+        <!-- Icons and checkboxes for container2 -->
+
+        <div class="icon">
+          <img src="assets/gun.jpeg" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          /><br />
+          <label for="checkbox3">gun</label><br />
+        </div>
+
+        <div class="icon">
+          <img src="assets/military.png" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">millitary</label><br />
+        </div>
+        <div class="icon">
+          <img src="assets/officercup.png" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">officer</label><br />
+        </div>
+        <div class="icon">
+          <img src="assets/shoes.png" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">boots</label><br />
+        </div>
+        <div class="icon">
+          <img
+            src="assets/bullet.png"
+            alt="Fingerprint"
+            id="Handcuff"
+            style="width: 42px"
+          />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">bullet</label><br />
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div class="icon" style="margin-left: -3px">
+          <img src="assets/tank.png" alt="Fingerprint" id="Handcuff" />
+          <input
+            type="checkbox"
+            id="checkbox3"
+            (change)="updateInput($event)"
+          />
+          <label for="checkbox3">tank</label
+          ><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+    </div>
+    <p style="font-size: 16px; color: rgb(28, 83, 146)">
+      <span style="text-transform: uppercase; color: rgb(28, 83, 146)"
+        >STEP 2:</span
+      >Provide Your Username and Password
+    </p>
+
+    <div class="input-field">
+      <div>
+        <small
+          *ngIf="
+            loginForm.controls['username'].dirty &&
+            loginForm.controls['username'].hasError('required')
+          "
+          class="danger-text"
+          >* Username is required</small
+        >
+      </div>
+      <label for="username">Username:</label> &nbsp;
+      <input
+        type="text"
+        class="user-name"
+        name="username"
+        id="username"
+        formControlName="username"
+        [class.error]="
+          loginForm.controls['username'].dirty &&
+          loginForm.controls['username'].hasError('required')
+        "
+      /> 
+      
+    </div>
+
+    <br />
+
+    <!-- Password field with error message -->
+
+    <div class="input-field">
+      <div>
+        <small
+          *ngIf="
+            loginForm.controls['password'].dirty &&
+            loginForm.controls['password'].hasError('required')
+          "
+          class="danger-text"
+          >* Password is required</small
+        >
+      </div>
+      <label for="password">Password:</label> &nbsp;
+      <input
+        class="user-name"
+        type="password"
+        name="password"
+        id="password"
+        formControlName="password"
+        [class.error]="
+          loginForm.controls['password'].dirty &&
+          loginForm.controls['password'].hasError('required')
+        "
+      />
+    </div>
+    <br />
+
+    <!-- input for the icons  -->
+
+    <input
+      type="text"
+      id="loginicon"
+      name="loginicon"
+      [value]="Loginicon"
+      readonly
+      name="inputBox"
+      formControlName="loginicon"
+      style="visibility: hidden"
+    />
+    <!-- Login button -->
+    <button type="submit" class="button" (click)="onLogin()">Login</button>
+  </form>
+</mat-card>

@@ -1,0 +1,212 @@
+<!-- Include Angular Material Dialog Module -->
+<app-banner></app-banner>
+<mat-toolbar>
+  <img class="toggle-btn" mat-icon-button (click)="sidenav.toggle()" src="assets/flogo.png" alt="logo" style="width: 60px; height: 60px; cursor: pointer;" />
+  <app-modal></app-modal>
+</mat-toolbar> 
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <app-header></app-header>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <nav class="navbar"><br /></nav>
+    <div class="container-for-siderbtn-and-heading"><p>System User Account</p></div><br /><br /> 
+
+    <div class="btn">
+      <button mat-raised-button style="width: auto; position: absolute; right: 0; margin-right: 60px;" type="button" (click)="openUser()">
+        <mat-icon>add</mat-icon> Add System User
+      </button>
+    </div> 
+
+    <br /><br /><br />
+    <mat-card>
+      <br />
+      <div class="btn1">
+        <input type="text" placeholder="Search here" style="margin-right: 5px" />
+      </div>
+
+      <br />
+      <br />
+      <br /> 
+      
+      <div class="row">
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select mat-select id="accountType" class="form-control">
+            <option mat-option value="">Select Account Type</option>
+            <option value="Administrators">Administrators</option>
+            <option value="Supervisors">Supervisors</option>
+            <option value="Users">Users</option>
+          </select>
+        </div>
+    
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="unit" class="form-control">
+            <option value="">Select Unit</option>
+            <option value="Regular>Patrol">Regular>Patrol</option>
+            <option value="Regular>Rapid Response">Regular>Rapid Response</option>
+            <option value="Regular>Traffic">Regular>Traffic</option>
+            <option value="Special Squad>Cyber Crime Unit">
+              Special Squad>Cyber Crime Unit
+            </option>
+            <option value="Special Squad>Firearms">Special Squad>Firearms</option>
+            <option value="Special Squad>Homicide">Special Squad>Homicide</option>
+          </select>
+        </div>
+        <br /> 
+
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="organization" class="form-control">
+            <option value="">Select Organization</option>
+            <option value="The National Police">The National Police</option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="jobgroup" class="form-control">
+            <option value="">Select Jobgroup</option>
+            <option value="Inspector">Inspector</option>
+            <option value="Constable">Constable</option>
+            <option value="Special Agents">Special Agents</option>
+            <option value="Border Patrol Agents">Border Patrol Agents</option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="joblevel" class="form-control">
+            <option value="">Select Joblevel</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="job" class="form-control">
+            <option value="">Select Job</option>
+            <option value="Firearm Management Officer">
+              Firearm Management Officer
+            </option>
+          </select>
+        </div>
+     <br>
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="jobstep" class="form-control">
+            <option value="">Select Jobstep</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </div>
+    </mat-card>
+    <br />
+    
+    <mat-table [dataSource]="dataSource" class="custom-table" mat-table>
+      <ng-container matColumnDef="REF#">
+        <th mat-header-cell *matHeaderCellDef>REF#</th>
+        <td mat-cell *matCellDef="let element">{{ element.efpid }} <span>#REF</span> {{ element.efpid }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NAME">
+        <th mat-header-cell *matHeaderCellDef>NAME</th>
+        <td mat-cell *matCellDef="let element"><span>Fullname :</span>{{ element.firstName }} {{ element.middleName }} {{ element.lastName }}
+        <span> {{element.mobile}}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="UNIT">
+        <th mat-header-cell *matHeaderCellDef>UNIT</th>
+        <td mat-cell *matCellDef="let element">{{ element.unit }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="JOB">
+        <th mat-header-cell *matHeaderCellDef>JOB</th>
+        <td mat-cell *matCellDef="let element">{{ element.job }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ACCOUNT TYPE">
+        <th mat-header-cell *matHeaderCellDef>ACCOUNT DETAIL</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.accounttype }}
+          <div class="sub-text">
+            <span>Account Type :</span> {{ element.accountType }} <br>
+            <span>Login Icon :</span> {{ element.loginIcon }} <br>
+            <span>Username: </span> {{ element.username }} <br /> 
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ACTION">
+        <th mat-header-cell *matHeaderCellDef>ACTION</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="action-buttons">
+            <button mat-button (click)="openEditModal(element)" style="width: auto;">
+              <span><mat-icon style="color: green;">edit</mat-icon>Edit</span>
+            </button>
+          </div>
+        </td>
+      </ng-container>  
+
+      <ng-container matColumnDef="STATUS">
+        <th mat-header-cell *matHeaderCellDef>STATUS</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-slide-toggle (change)="toggleRow(element)" [checked]="element.isDisabled"> 
+           <span style="color: rgb(251, 104, 104);">Deactivate User</span> 
+          </mat-slide-toggle>
+        </td>
+      </ng-container>
+    
+      <!-- Table Header Row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Table Data Row -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'disabled-row': row.isDisabled}"></tr>
+    </mat-table>
+  </mat-sidenav-content>
+</mat-sidenav-container> 
+
+<app-user-modal
+*ngIf="showUserModal"
+></app-user-modal> 
+
+<ng-template #editModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Edit User</h5>
+    <button type="button" class="close" (click)="modal.close('Close click')" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="editForm">
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Account Type</mat-label>
+        <mat-select formControlName="accountType">
+          <mat-option value="" disabled selected>Choose...</mat-option>
+          <mat-option value="Admin">Admin</mat-option>
+          <mat-option value="Manager">Manager</mat-option>
+          <mat-option value="Guest">Guest</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Login Icon</mat-label>
+        <mat-select formControlName="loginIcon">
+          <mat-option value="" disabled selected>Choose...</mat-option>
+          <mat-option value="car">Car</mat-option>
+          <mat-option value="grenade">Grenade</mat-option>
+          <mat-option value="handcuff">Handcuff</mat-option>
+          <mat-option value="vest">Vest</mat-option>
+          <mat-option value="walkie">Walkie</mat-option>
+          <mat-option value="helicopter">Helicopter</mat-option>
+          <mat-option value="gun">Gun</mat-option>
+          <mat-option value="military">Military</mat-option>
+          <mat-option value="officerCup">Officer Cup</mat-option>
+          <mat-option value="shoes">Shoes</mat-option>
+          <mat-option value="bullet">Bullet</mat-option>
+          <mat-option value="tank">Tank</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Update</button>
+    </form>
+  </div>
+</ng-template>

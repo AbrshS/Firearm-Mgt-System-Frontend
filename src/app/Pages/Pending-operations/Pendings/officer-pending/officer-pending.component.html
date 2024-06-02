@@ -1,0 +1,119 @@
+<table mat-table [dataSource]="dataSource">
+  <!-- Define your table columns here -->
+  <ng-container matColumnDef="REF#">
+    <th mat-header-cell *matHeaderCellDef style="background-color: #f1f1f1">REF#</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.id }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="NAME">
+    <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>NAME</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.fullName }} <br />
+      {{ element.fpId }} <br />
+      {{ element.title }} <br />
+      {{ element.phoneNumber }} <br />
+      {{ element.position }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="FIREARM">
+    <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>FIREARM</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.firearmType }} <br />
+      {{ element.firearmModel }} <br />
+      {{ element.firearmCalibre }} <br />
+      {{ element.firearmMechanism }} <br />
+      {{ element.manufacturerSerial }} <br />
+      {{ element.magazineCapacity }} <br />
+      {{ element.yearManufacture }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="WHO REGISTERED THE FIREARM">
+    <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>WHO REGISTERED THE FIREARM</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.registeredFullName }} <br />
+      {{ element.registeredTitle }} <br />
+      {{ element.registeredPosition }} <br />
+      {{ element.registeredEmail }} <br />
+      {{ element.registeredSignature }} <br />
+      {{ element.registeredDate }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="REGISTERED BODY">
+    <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>REGISTERED BODY</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.registeredBodyFullName }} <br />
+      {{ element.registeredBodyResponsibility }} <br />
+      {{ element.registeredBodySignature }} <br />
+      {{ element.registeredBodyDate }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ACTION">
+    <th style="background-color: #f1f1f1" mat-header-cell *matHeaderCellDef>ACTION</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button class="confirm-btn" (click)="openModal(element)">
+        <mat-icon>check_circle</mat-icon> Confirm
+      </button>   
+      <br /><br>
+      <button mat-button class="cancel-btn">
+        <mat-icon>close</mat-icon> Cancel
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns" style="height: auto"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<div class="modal" [ngClass]="{'show': isModal}">
+  <div class="modal-content">
+   
+    <form [formGroup]="officerForm"> 
+      <div class="dialog-container">
+        <div class="dialog-header">
+          <h2 class="dialog-title">Confirmation</h2>
+        </div>
+        <div class="dialog-content">
+          <p>Are you sure you want to proceed with this action?</p>
+        </div> 
+        <div class="dialog-actions">
+          <button mat-button (click)="closeModal()">Cancel</button>
+          <button mat-raised-button color="primary" (click)="onConfirm()" (click)="closeModal()">Yes</button>
+        </div>
+      </div>  
+      
+      <div style="visibility: hidden;"> 
+        <input formControlName="fullName" type="text" placeholder="Full Name"><br>
+        <input formControlName="fpId" type="text" placeholder="FP ID"><br>
+        <input formControlName="title" type="text" placeholder="Title"><br>
+        <input formControlName="phoneNumber" type="text" placeholder="Phone Number"><br>
+        <input formControlName="position" type="text" placeholder="Position"><br>
+        <input formControlName="firearmType" type="text" placeholder="Firearm Type"><br>
+        <input formControlName="firearmModel" type="text" placeholder="Firearm Model"><br>
+        <input formControlName="firearmCalibre" type="text" placeholder="Firearm Calibre"><br>
+        <input formControlName="firearmMechanism" type="text" placeholder="Firearm Mechanism"><br>
+        <input formControlName="manufacturerSerial" type="text" placeholder="Manufacturer Serial"><br>
+        <input formControlName="magazineCapacity" type="text" placeholder="Magazine Capacity"><br>
+        <input formControlName="yearManufacture" type="text" placeholder="Year of Manufacture"><br>
+        <input formControlName="registeredFullName" type="text" placeholder="Registered Full Name"><br>
+        <input formControlName="registeredTitle" type="text" placeholder="Registered Title"><br>
+        <input formControlName="registeredPosition" type="text" placeholder="Registered Position"><br>
+        <input formControlName="registeredEmail" type="text" placeholder="Registered Email"><br>
+        <input formControlName="registeredSignature" type="text" placeholder="Registered Signature"><br>
+        <input formControlName="registeredDate" type="text" placeholder="Registered Date"><br>
+        <input formControlName="registeredBodyFullName" type="text" placeholder="Registered Body Full Name"><br>
+        <input formControlName="registeredBodyResponsibility" type="text" placeholder="Registered Body Responsibility"><br>
+        <input formControlName="registeredBodySignature" type="text" placeholder="Registered Body Signature"><br>
+        <input formControlName="registeredBodyDate" type="text" placeholder="Registered Body Date"><br>
+      </div>
+    
+     
+    </form>
+    
+  </div>
+</div>

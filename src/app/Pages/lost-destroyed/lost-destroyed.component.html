@@ -1,0 +1,38 @@
+<app-banner></app-banner>
+<mat-toolbar>
+  <img 
+    class="toggle-btn"
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    src="assets/flogo.png"
+    alt="logo"
+    style="width: 60px; height: 60px; cursor: pointer;"
+  />
+
+  <app-modal></app-modal>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation (App Header) -->
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <app-header></app-header>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-tab-group >
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>report_problem</mat-icon> Lost Firearm
+        </ng-template>
+        <app-loss-table></app-loss-table>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>delete_forever</mat-icon> Destroyed Firearm
+        </ng-template>
+        <app-destroyed-table></app-destroyed-table>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>

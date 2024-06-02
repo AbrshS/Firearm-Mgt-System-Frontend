@@ -1,0 +1,68 @@
+<div class="modal">
+  <div class="modal-content" *ngIf="Isloss">
+<div class="loss-box">
+  <form [formGroup]="LossForm">
+    <div> 
+      <mat-icon (click)="closemodal()" style="position: absolute; right: 0; margin-right: 20px; ">close</mat-icon>
+      <h2 style="color:  #0c2a4c">Firearm Loss Report</h2>
+      <p style="color: #414345;"> To confirm the loss of firearms listed alongside,Kindly fill all the information in this form.When satisfied,that all the details are correct ,click on the <strong>"CONFIRM LOSS" </strong>button below</p>
+      <hr>
+    </div> 
+          <br> 
+          <div class="user-bo">
+
+              <p>Selected Firearm Detail
+              </p>
+            <input type="text" name="manufacturerSerial"  id="manufacturerSerial" formControlName="manufacturerSerial" [(ngModel)]="lossData.manufacturerSerial"readonly>
+            <input type="text" name="isFirearm"  id="isFirearm" formControlName="isFirearm" [(ngModel)]="lossData.isFirearm"readonly>
+            <input type="text" name="dateMarked"  id="dateMarked" formControlName="dateMarked" [(ngModel)]="lossData.dateMarked"readonly>
+            <input type="text" name="markedBy"  id="markedBy" formControlName="markedBy" [(ngModel)]="lossData.markedBy"readonly>
+            <input type="text" name="firearmType"  id="firearmType" formControlName="firearmType" [(ngModel)]="lossData.firearmType"readonly>
+            <input type="text" name="firearmModel"  id="firearmModel" formControlName="firearmModel" [(ngModel)]="lossData.firearmModel  "readonly>
+            <input type="text" name="firearmMechanism"  id="firearmMechanism" formControlName="firearmMechanism" [(ngModel)]="lossData.firearmMechanism "readonly>
+            <input type="text" name="firearmCalibre"  id="firearmCalibre" formControlName="firearmCalibre" [(ngModel)]="lossData.firearmCalibre "readonly>
+            <input type="text" name="magazineCapacity"  id="magazineCapacity" formControlName="magazineCapacity" [(ngModel)]="lossData.magazineCapacity "readonly>
+            <input type="text" name="yearManufacture"  id="yearManufacture" formControlName="yearManufacture" [(ngModel)]="lossData.yearManufacture "readonly>
+            <input type="text" name="source"  id="source" formControlName="source" [(ngModel)]="lossData.source "readonly>
+            <input type="text" name="store"  id="store" formControlName="store" [(ngModel)]="lossData.store "readonly>
+            <input type="text" name="additionalComment"  id="additionalComment" formControlName="additionalComment" [(ngModel)]="lossData.additionalComment "readonly>
+
+          </div> 
+          <br> 
+
+    <div class="user-box"> 
+      <br>
+      <input type="text" name="fullName"  id="fullName" formControlName="fullName" [(ngModel)]="lossData.fullName"readonly>
+      <label for="fullName">Reported By:</label>
+    </div>  
+
+    <div class="user-box"> 
+      <br>
+      <input type="number" name="Fpid"  id="Fpid" formControlName="fpId" [(ngModel)]="lossData.fpId" >
+      <label for="Fpid">Fp-Id</label>
+    </div> 
+
+    <div class="user-box"> 
+      <br>
+      <input  type="text" name="fullName"  id="fullName" formControlName="fullName" >
+      <label for="lholder">Holder</label>
+    </div>
+
+    <div class="user-box">
+      <br>
+      <input type="date" name=""  value="" id="reportedOn" formControlName="reportedOn">
+      <label for="reportedOn">Reported On:</label> 
+    </div> 
+ 
+  <div class="user-box">
+    <br>
+  <input type="text" name=""  value="" id="comment" formControlName="comment">
+  <label for="comment">Comment:</label>
+  </div>  
+      <button mat-raised-button style="position:absolute;right: 0; margin-right: 30px;"(click)="OnSubmit()">confirm</button>   
+  </form> 
+ 
+</div> 
+
+  </div>
+</div>

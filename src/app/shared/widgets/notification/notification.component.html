@@ -1,0 +1,26 @@
+<div class="notification-modal" *ngIf="isModalVisible"> 
+  <div *ngIf="accountType == 'Admin'">
+    <div class="modal-header">
+      <h2>Notifications</h2>
+    </div>
+    <div class="modal-body">
+      <div *ngIf="notifications.length === 0" class="no-notifications">
+     <img src="assets/Not.webp" alt="">
+        <p>Your notifications live here</p>
+        <p>Subscribe to your favorite channels to get notified about their latest videos.</p>
+      </div>
+      <div *ngFor="let notification of notifications" class="notification" (click)="closeModal()" (click)="onClick()"> 
+        <div >
+          <p >Requested firearm to be withdrawn from <strong>{{ notification.store }}</strong> store to officer.</p>
+          <div class="notification-details" (click)="deleteNotification(notification.id)">
+            <div><strong>Firearm Holder:</strong> {{ notification.holder }}</div>
+            <div class="sent-date">{{ notification.sentDate | date }}</div>
+          </div> 
+          <hr>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  
+</div>

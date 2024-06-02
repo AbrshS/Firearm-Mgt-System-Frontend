@@ -1,0 +1,120 @@
+<app-banner></app-banner>
+<mat-toolbar>
+  <img
+    class="toggle-btn"
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    src="assets/flogo.png"
+    alt="logo"
+    style="width: 60px; height: 60px; cursor: pointer"
+  />
+  <app-modal></app-modal>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation (App Header) -->
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <app-header></app-header>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <br />
+    <mat-tab-group>
+      <mat-tab label="Withdraw">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Officer </mat-panel-title>
+              <mat-panel-description>
+                Authorized personnel serving in law enforcement or military
+                capacities.
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <br />
+            <app-warning-card></app-warning-card>
+            <br />
+            <app-officer-pending></app-officer-pending>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Civillian </mat-panel-title>
+              <mat-panel-description>
+                Private individuals legally permitted to own firearms.
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <br />
+            <app-warning-card></app-warning-card>
+            <br />
+            <app-civillian-pending></app-civillian-pending>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Personal and Govermental Organisation
+              </mat-panel-title>
+              <mat-panel-description>
+                Employees of government agencies granted firearm privileges for
+                official duties.
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <br />
+            <app-warning-card></app-warning-card>
+            <br />
+            <app-poag-pending></app-poag-pending>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> International and Foreign </mat-panel-title>
+              <mat-panel-description>
+                Non-citizens authorized to possess firearms under specific
+                international or foreign regulations.
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <br />
+            <app-warning-card></app-warning-card>
+            <br />
+            <app-iofc-pending></app-iofc-pending>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Holiday and Hunt </mat-panel-title>
+              <mat-panel-description>
+                Individuals granted temporary firearm permits for hunting during
+                designated holiday seasons.
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <br />
+            <app-warning-card></app-warning-card>
+            <br />
+            <app-hmts-pending></app-hmts-pending>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-tab>
+
+      <mat-tab label="Loss">
+        <br />
+        <app-warning-card></app-warning-card>
+        <br />
+        <app-loss-pending></app-loss-pending>
+      </mat-tab>
+
+      <mat-tab label="Distruction">
+        <br />
+        <app-warning-card></app-warning-card>
+        <br />
+        <app-distruction-pending></app-distruction-pending>
+      </mat-tab>
+
+      <mat-tab label="Recovery">
+        <br />
+        <app-warning-card></app-warning-card>
+        <br />
+        <app-recover-pending></app-recover-pending>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav-content>
+</mat-sidenav-container>

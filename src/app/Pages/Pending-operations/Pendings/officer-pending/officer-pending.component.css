@@ -1,0 +1,291 @@
+mat-sidenav-container {
+    height: 100%;
+  }
+  
+  mat-tab-group {
+    width: 90%;
+    left: 50%;
+    /* Set desired width */
+    position: absolute;
+    left: 50%; /* Move the left edge of the panel to the center */
+    transform: translateX(-50%); /* Translate the panel back by half its width */
+    justify-content: center; /* Horizontal centering */
+    text-align: center;
+  }
+  
+  mat-expansion-panel-header {
+    height: 80px;
+    margin-top: 20px;
+    background-color: rgb(249, 249, 249);
+  }
+  mat-panel-description mat-table {
+    background-color: rgba(255, 255, 255, 0.13);
+  }
+  
+  select {
+    background-color: #e6e6e6;
+    font-size: 12px;
+    width: 100%;
+    color: #0c2a4c;
+  }
+  
+  button .confirm-btn{
+    background-color: #0c2a4c;
+  } 
+  
+  td {
+    border: 1px solid rgb(199, 199, 199);
+    width: 400px;
+    font-size: 12px;
+    color: #0c2a4c;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  th {
+    border: 1px solid rgb(199, 199, 199);
+    background-color: #f1f1f1;
+    color: #0c2a4cb8;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: -19px;
+  }
+  
+  button {
+    color: #7c0000;
+  }
+  /* Animations */
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .toggle-button {
+    position: fixed;
+    top: 0px;
+    left: 10px;
+    background-color: #0c2a4c;
+    border: none;
+    cursor: pointer;
+    color: #0c2a4c;
+  }
+  
+  .toggle-button mat-icon {
+    font-size: 24px;
+  }
+  
+  .main-container {
+    display: flex;
+    margin-top: 1px;
+  }
+  
+  .content-container {
+    flex-grow: 1;
+    overflow-x: auto;
+    margin-top: 0px;
+  }
+  
+  .content {
+    flex-shrink: 0;
+    width: max-content;
+    padding: 20px;
+    transition: padding 0.3s ease-in-out;
+  }
+  
+  .content.open {
+    padding-left: 200px;
+  }
+  
+  .sidebar {
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    box-shadow: 0 0 0px #ffffff, 0 0 10px #dddedf, 0 0 5px #ffffff,
+      0 0 5px #ffffff;
+  }
+  
+  mat-sidenav {
+    width: 350px;
+    display: inline-block;
+    text-align: left;
+    z-index: -10px;
+    background-color: #f3f3f3;
+  }
+  
+  mat-nav-list {
+    position: relative;
+  }
+  
+  .container-for-siderbtn-and-heading {
+    display: inline-flex;
+  }
+  
+  .pages {
+    display: inline-block;
+  }
+  
+  a {
+    position: relative;
+    left: 0;
+    text-decoration: none;
+    color: #0c2a4c;
+    text-transform: capitalize;
+  }
+  a:hover {
+    left: 10px;
+    transition: left 0.2s ease-in-out;
+  }
+  span {
+    position: relative;
+    left: 0;
+    font-size: 12px;
+    color: #5c5d5f;
+  }
+  .popup-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .buttons {
+    display: inline-flex;
+    width: 200px;
+  }
+  span {
+    margin-left: 5px;
+  }
+  h2 {
+    margin-left: 20px;
+    color: #7e7e7e;
+  }
+  
+  mat-card {
+    height: 150px;
+    background-color: #f1f1f1;
+    width: 95%;
+    margin-left: 30px;
+  }
+  
+  /* Apply styles to the table container */
+  
+  /* Style the table header */
+  mat-header-cell {
+    background-color: #7c0000; /* Header background color */
+    font-weight: bold;
+  }
+  
+  /* Style table cells */
+  .mat-cell,
+  .mat-header-cell {
+    padding: 8px 16px; /* Cell padding */
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Bottom border for cells */
+  }
+  
+  /* Add hover effect on rows */
+  .mat-row:hover {
+    background-color: #e0e0e0; /* Hover background color */
+  }
+  
+  .table-responsive {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  
+  /* Add CSS styles for larger screens */
+  .table-responsive {
+    overflow-x: auto; /* Add horizontal scroll for small screens */
+  }
+  
+  /* Apply specific styles for smaller screens (adjust breakpoints as needed) */
+  @media (max-width: 768px) {
+    .table-responsive {
+      overflow-x: auto; /* Add horizontal scroll for smaller screens */
+    }
+  }
+  
+  mat-sidenav-container {
+    height: 100%;
+  } 
+  
+  p {
+    color: rgb(31, 155, 31);
+    font-size: large;
+    margin: 10px;
+  }  
+
+/* Show the modal */
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 9% auto;
+  padding: 20px;
+  width: 300px; 
+  height: 200px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.show {
+  display: block;
+} 
+
+.dialog-container {
+  max-width: 400px;
+  height: 200px;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.dialog-title {
+  font-size: 18px;
+  color: #606060;
+  margin: 0;
+}
+
+.close-button {
+  color: #333;
+}
+
+.dialog-content {
+  margin-bottom: 20px; 
+  font-size: 12px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog-actions button {
+  margin-left: 10px;
+}
+

@@ -1,0 +1,369 @@
+<div class="modal">
+  <div class="modal-content" *ngIf="isIofcModal">
+    <mat-toolbar>
+      Firearm registration form available to international community and foreign
+      representative
+      <div class="spacer"></div>
+      <!-- Add a spacer to push the close button to the right -->
+      <div class="CloseButton">
+        <mat-icon (click)="closeModal()">close</mat-icon>
+      </div>
+    </mat-toolbar>
+    <form action="" [formGroup]="iofcForm">
+      <div class="form-row">
+        <!-- First Column -->
+        <div class="form-column">
+          <h2>Personal Detail</h2>
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" formControlName="fullName" />
+          </div>
+          <br />
+
+          <div class="form-group">
+            <label for="candidateCountry">Candidate country:</label>
+            <input
+              type="text"
+              id="candidateCountry"
+              formControlName="candidateCountry"
+              required
+            />
+          </div>
+          <br />
+
+          <div class="form-group">
+            <label for="evidenceOfMedical">The Evidence of medical:</label>
+            <input
+              type="text"
+              id="evidenceOfMedical"
+              formControlName="evidenceOfMedical"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="passportNo">Passport NO</label>
+            <input type="text" id="passportNo" formControlName="passportNo" />
+          </div>
+
+          <div class="form-group">
+            <label for="reasonHeCame">Reason He Came</label>
+            <input
+              type="text"
+              id="reasonHeCame"
+              formControlName="reasonHeCame"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="comingDate">Coming Date:</label>
+            <input type="date" id="comingDate" formControlName="comingDate" />
+          </div>
+        </div>
+
+        <!-- Second Column -->
+
+        <div class="form-column">
+          <h2>address</h2>
+
+          <div class="form-group">
+            <label for="countryOfResidence">Country of residence</label>
+            <input
+              type="text"
+              id="countryOfResidence"
+              class="form-control"
+              formControlName="countryOfResidence"
+            />
+          </div>
+
+          <div class="select-wrapper col-md-3" style="width: 195px">
+            <label for="region">State/Region :</label>
+            <select
+              mat-select
+              id="region"
+              class="option-input"
+              formControlName="region"
+            >
+              <option value="Adiss Ababa">Adiss Ababa</option>
+              <option value="Afar">Afar</option>
+              <option value="Benishangul Gumz">Benishangul Gumz</option>
+              <option value="Dire Dawa">Dire Dawa</option>
+              <option value="Gambella">Gambella</option>
+              <option value="Harari">Harari</option>
+              <option value="Oromia">Oromia</option>
+              <option value="Somali">Somali</option>
+              <option value="Tigray">Tigray</option>
+              <option value="SNNPR">SNNPR</option>
+              <option value="Sidama">Sidama</option>
+              <option value="SWEPR">SWEPR</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper col-md-3" style="width: 195px">
+            <label for="subcity">Zone/Subcity :</label>
+            <select
+              mat-select
+              id="subcity"
+              class="option-input"
+              formControlName="subcity"
+            >
+              <option value="Administrators">Administrators</option>
+              <option value="Supervisors">Supervisors</option>
+              <option value="Users">Users</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="district">District</label> <br />
+            <input type="text" id="district" formControlName="district" />
+          </div>
+
+          <div class="form-group">
+            <label for="kebele">kebele</label> <br />
+            <input type="text" id="kebele" formControlName="kebele" />
+          </div>
+
+          <div class="form-group">
+            <label for="specificArea">Specific area :</label> <br />
+            <!--this will be fillout with the longtitude and latitude-->
+            <input
+              type="text"
+              id="specificArea"
+              formControlName="specificArea"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" formControlName="phoneNumber" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="Email" id="email" formControlName="email" />
+          </div>
+        </div>
+
+        <!-- Third Column -->
+        <div class="form-column">
+          <h2>Firearm Detail</h2>
+
+          <div class="form-group">
+            <label for="magazineCapacity">Magazine Capacity</label> <br />
+            <input
+              type="text"
+              id="magazineCapacity"
+              formControlName="magazineCapacity"
+              required
+              [(ngModel)]="iofcData.magazineCapacity"
+            />
+          </div>
+          <br />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="FirearmType"
+            formControlName="firearmType"
+            required
+            [(ngModel)]="iofcData.firearmType"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmModel"
+            formControlName="firearmModel"
+            required
+            [(ngModel)]="iofcData.firearmModel"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="manufacturer"
+            formControlName="manufacturer"
+            required
+            [(ngModel)]="iofcData.manufacturer"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmMechanism"
+            formControlName="firearmMechanism"
+            required
+            [(ngModel)]="iofcData.firearmMechanism"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="firearmCalibre"
+            formControlName="firearmCalibre"
+            [(ngModel)]="iofcData.firearmCalibre"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="yearManufacture"
+            formControlName="yearManufacture"
+            [(ngModel)]="iofcData.yearManufacture"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="isFirearm"
+            formControlName="isFirearm"
+            [(ngModel)]="iofcData.isFirearm"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="dateMarked"
+            formControlName="dateMarked"
+            [(ngModel)]="iofcData.dateMarked"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="source"
+            formControlName="source"
+            [(ngModel)]="iofcData.source"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="store"
+            formControlName="store"
+            [(ngModel)]="iofcData.store"
+            readonly
+          />
+          <input
+            style="background-color: #f1f1f1"
+            type="text"
+            id="additionalComment"
+            formControlName="additionalComment"
+            [(ngModel)]="iofcData.additionalComment"
+            readonly
+          />
+        </div>
+
+        <!-- Fourth Column -->
+        <div class="form-column">
+          <h2>The body that registered the weapon</h2>
+          <div class="form-group">
+            <label for="registeredBodyPosition">Position</label> <br />
+            <input
+              type="text"
+              id="registeredBodyPosition"
+              formControlName="registeredBodyPosition"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodyFullName">full name</label><br />
+            <input
+              type="text"
+              id="registeredBodyFullName"
+              formControlName="registeredBodyFullName"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredTitle">Title</label> <br />
+            <input
+              type="text"
+              id="registeredTitle"
+              formControlName="registeredTitle"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodyResponsibility">Responsibility</label>
+            <br />
+            <input
+              type="text"
+              id="registeredBodyResponsibility"
+              formControlName="registeredBodyResponsibility"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodySignature">signature</label> <br />
+            <input
+              type="text"
+              id="registeredBodySignature"
+              formControlName="registeredBodySignature"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredBodyDate">Date</label> <br />
+            <input
+              type="date"
+              id="registeredBodyDate"
+              formControlName="registeredBodyDate"
+            />
+          </div>
+        </div>
+        <div class="container2">
+          <br />
+          <h2>The Registered Body</h2>
+
+          <div class="form-group">
+            <label for="registeredFullName">Full Name</label> <br />
+            <input
+              type="text"
+              id="registeredFullName"
+              formControlName="registeredFullName"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredPosition">Position</label> <br />
+            <input
+              type="text"
+              id="registeredPosition"
+              formControlName="registeredPosition"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredResponsibility">Responsibility</label><br />
+            <input
+              type="text"
+              id="registeredResponsibility"
+              formControlName="registeredResponsibility"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredSignature">signature</label> <br />
+            <input
+              type="text"
+              id="registeredSignature"
+              formControlName="registeredSignature"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="registeredDate">date</label><br />
+            <input
+              type="date"
+              id="registeredDate"
+              formControlName="registeredDate"
+            />
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button (click)="onSubmit()">Confirm</button>
+    </form>
+  </div>
+</div>
+

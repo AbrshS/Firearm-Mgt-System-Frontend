@@ -1,0 +1,118 @@
+.Roles-class {
+  display: flex;
+  justify-content: space-between; /* This will push the button to the right side */
+  align-items: center; /* This will vertically center align the content */
+  padding: 16px; /* Add some padding for spacing */
+  color: rgb(89, 89, 89);
+}
+
+.text {
+  flex-grow: 1; /* This will allow the text div to grow and take available space */
+  margin-right: 16px; /* Add some margin to separate text and button */
+}
+
+.create-role-btn {
+  margin-left: auto; /* This will push the button to the right side */
+}
+
+.create-role-btn button {
+  background-color: #2a4adc;
+  color: #e0e0e0;
+  /* Add some padding to the button */
+  padding: 8px 16px;
+  /* Remove the mat-icon spacing */
+  margin-right: 70px;
+}
+
+.default-class {
+  border: 1px solid #e0e0e0;
+  width: 90%;
+  border-radius: 5px;
+  margin: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  color: rgb(89, 89, 89);
+}
+
+.default-text h2,
+.default-text p {
+  padding-left: 16px; /* Add padding to h2 and p elements */
+}
+
+
+h3 {
+    font-weight: bold;
+}
+.admin-text h3,
+.Manager-text h3,
+.Guest-text h3,
+.admin-text p,
+.Manager-text p,
+.Guest-text p {
+  padding-left: 16px;
+  display: flex;
+  /* Add padding to h3 and p elements */
+}
+
+.admin-text,
+.Manager-text,
+.Guest-text {
+  display: flex;
+
+  /* Add padding to h3 and p elements */
+}
+
+.add-role-btn {
+  margin-left: auto;
+  margin-right: 10px;
+  color: rgb(89, 89, 89);
+}
+
+.add-role-btn button {
+  margin-left: auto;
+  margin-right: 10px;
+  color: #2a4adc;
+  background-color: #2a4bdc28;
+}
+.Custom-roles {
+    border: 1px solid #e0e0e0;
+    width: 90%;
+    border-radius: 5px;
+    margin: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    color: rgb(89, 89, 89);
+} 
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+ .users {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.add-user-btn {
+    margin-left: auto;  
+    margin-right: 10px;
+}
+.roles-description {
+    padding:5px 0px 0px 16px;
+} 
+h4 {
+    font-weight: bold;
+} 
+.roles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    border-bottom: 1px solid #e0e0e0;
+} 
+.head {
+  color: rgb(73, 216, 108);
+  font-size: large;
+
+}
